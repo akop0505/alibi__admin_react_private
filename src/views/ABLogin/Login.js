@@ -35,13 +35,13 @@ class Login extends Component {
     const Login = this.state.username;
     const password = this.state.password;
     api.post('/account/token', {Login, password}).then((res) => {
-      for( let index in res.data ){
-        localStorage.setItem(index,res.data[index]);
+      for (let index in res.data) {
+        localStorage.setItem(index, res.data[index]);
       }
       setAxiosHeader();
-      this.props.history.push('/dashboard')
+        this.props.history.push('/')
     }).catch((err) => {
-      console.log(err.response.data);
+      console.log(err);
     });
   }
 
