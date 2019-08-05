@@ -1,0 +1,16 @@
+.showHeader{
+    width: 100%; 
+}
+.showHeaderBlok{
+    text-align: center;
+    width: 100%;
+    background: #FAFAFA;
+    margin-top: 100px;
+}
+.headerContacts{
+    border: #DBDBDB solid 2px;
+    padding-left: 12px;
+}
+.buttonCLos{
+    width: 90px;
+}
