@@ -1,70 +1,80 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Badge, Card, CardBody, CardHeader, Col, Row, Table } from 'reactstrap';
+import React, {Component} from 'react';
+import {Table,Input,Label,FormGroup,Button } from 'reactstrap';
+import {api} from './../../services/API';
 
-import usersData from './../Users/UsersData';
-
-function UserRow(props) {
-    const user = props.user
-    const userLink = `/users/${user.id}`
-
-    const getBadge = (status) => {
-        return status === 'Active' ? 'success' :
-            status === 'Inactive' ? 'secondary' :
-                status === 'Pending' ? 'warning' :
-                    status === 'Banned' ? 'danger' :
-                        'primary'
-    }
-
-    return (
-        <tr key={user.id.toString()}>
-            <th scope="row"><Link to={userLink}>{user.id}</Link></th>
-            <td><Link to={userLink}>{user.name}</Link></td>
-            <td>{user.registered}</td>
-            <td>{user.role}</td>
-            <td><Link to={userLink}><Badge color={getBadge(user.status)}>{user.status}</Badge></Link></td>
-        </tr>
-    )
-}
-
-class Users extends Component {
-
+class Cases extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            users:[],
+        }
+    };
+    componentDidMount(){
+        api.get('/users').then(res=>{
+            const users = res.data;
+            this.setState({users});
+            console.log(users)
+            });
+        };
     render() {
-
-        const userList = usersData.filter((user) => user.id < 10)
-
         return (
-            <div className="animated fadeIn">
-                <Row>
-                    <Col xl={12}>
-                        <Card>
-                            <CardHeader>
-                                <i className="fa fa-align-justify"></i> Users <small className="text-muted">example</small>
-                            </CardHeader>
-                            <CardBody>
-                                <Table responsive hover>
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">id</th>
-                                        <th scope="col">name</th>
-                                        <th scope="col">registered</th>
-                                        <th scope="col">role</th>
-                                        <th scope="col">status</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {userList.map((user, index) =>
-                                        <UserRow key={index} user={user}/>
-                                    )}
-                                    </tbody>
-                                </Table>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
+            <div className={'text-center'}>
+                <Table responsive>
+                    <thead>
+                        <tr>
+                            <th>
+                            <FormGroup check className="checkbox">
+                                <Input 
+                                    className="form-check-input" 
+                                    type="checkbox" 
+                                    id="checkbox1" 
+                                    name="checkbox1" 
+                                    value="option1"
+                                    />
+                                <Label check className="form-check-label" htmlFor="checkbox1"></Label>
+                            </FormGroup>
+                            </th>
+                            <th>ID</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.users.map((el)=>{
+                            return(
+                                <tr key={el.id.toString()}>
+                                    <td>
+                                        <FormGroup check className="checkbox">
+                                        <Input 
+                                            className="form-check-input" 
+                                            type="checkbox" 
+                                            id="checkbox1" 
+                                            name="checkbox1" 
+                                            value="option1"
+                                        />
+                                        <Label check className="form-check-label" htmlFor="checkbox1"></Label>
+                                        </FormGroup>
+                                    </td>
+                                    <td>{el.id}</td>
+                                    <td>{el.firstname}</td>
+                                    <td>{el.lastname}</td>
+                                    <td>
+                                        <Button block color="ghost-primary">
+                                            <i className="fa fa-pencil  "></i><br/>EDIT
+                                        </Button>
+                                    </td>
+                            </tr>
+                            )
+                        })}
+                       
+                                
+                    </tbody>
+                </Table>
             </div>
-        )
+        );
     }
 }
 
-export default Users;
+export default Cases;
+

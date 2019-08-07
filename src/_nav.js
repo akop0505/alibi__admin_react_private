@@ -7,7 +7,7 @@ export default {
       badge: {
         variant: 'info',
         text: 'NEW',
-      },
+      }
     },
     {
       title: true,

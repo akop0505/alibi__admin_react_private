@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {events} from './data';
-import {Row, Table, FormGroup,Input,Label,Button } from 'reactstrap';
+import {Row, Table, FormGroup,Input,Label,Button} from 'reactstrap';
 import moment from 'moment';
 import {api} from './../../services/API';
-import './ShowHider.css'
+import Creat from '../ABCreated/Creat';
+import { Link } from 'react-router-dom';
+import './Events.css'
+
 
 
 class Events extends Component {
@@ -20,7 +23,7 @@ class Events extends Component {
 componentDidMount(){
     api.get('/events').then(res=>{
         const events = res.data;
-        console.log(res.data)
+
         this.setState({events});
         })
     }
@@ -58,7 +61,7 @@ getParsent(data){
         }
     renderTable() {
         const _this = this;
-            return(<Table responsive>
+            return(<Table responsive className='eventsTable'>
                         <thead>
                             <tr>
                                 <th>
@@ -79,8 +82,11 @@ getParsent(data){
                                 <th>Label</th>
                                 <th>creation <br/>data</th>
                                 <th>Header<br/> tamblet</th>
-                                <th><Button><i className="fa fa-plus fa-lg mt-4">CREATE</i></Button></th>
-                                <th><Button><i className="fa fa-download fa-lg mt-4"></i>EXPORT</Button></th>
+                                <Link to={`/Create`} >
+                                    <th><Button block color="ghost-primary"><i className="fa fa-plus  mt-4"></i>CREATE</Button>
+                                    </th>
+                                </Link>
+                                <th><Button block color="ghost-primary"><i className="fa fa-download  mt-4"></i>EXPORT</Button></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,8 +117,8 @@ getParsent(data){
                                             PREVIEW
                                             </Button>
                                         </td>
-                                        <td><Button><i className="fa fa-pencil fa-lg mt-4">EDIT</i></Button></td>
-                                        <td><Button><i className="fa fa-eye fa-lg mt-4">SHOW</i></Button></td>
+                                        <td><Button block color="ghost-primary"><i className="fa fa-pencil  "></i><br/>EDIT</Button></td>
+                                        <td><Button block color="ghost-primary"><i className="fa fa-eye  "></i>SHOW</Button></td>
                                     </tr>
                                 )
                                 })
