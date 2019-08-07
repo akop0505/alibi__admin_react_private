@@ -1,22 +1,56 @@
 import React, {Component} from 'react';
 import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
 import {api} from './../../services/API';
+import {Link} from "react-router-dom";
 
 class Cases extends Component {
+
+  events = [];
+
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
+      cases: []
     }
   };
 
-  componentDidMount() {
-    api.get('/users').then(res => {
-      const users = res.data;
-      this.setState({users});
-      console.log(users)
+  componentWillMount() {
+    this.loadEvents(() => {
+      this.loadCases();
     });
-  };
+  }
+
+  loadEvents(cb = null) {
+    api.get('/events').then(res => {
+      this.events = res.data;
+      cb();
+    }).catch(error => {
+      console.error(error);
+    });
+  }
+
+  loadCases() {
+    api.get('/cases').then(res => {
+      this.setState({
+        cases: res.data
+      });
+    }).catch(error => {
+      console.error(error);
+    });
+  }
+
+  getEventName(eventId) {
+    const event = this.events.find((el) => {
+      return el.id === eventId;
+    });
+    return event.name || "No Name";
+  }
+
+  getElementName() {
+    const casesId = this.state.cases.eventsId;
+    console.log(casesId)
+
+  }
 
   render() {
     return (
@@ -37,15 +71,15 @@ class Cases extends Component {
               </FormGroup>
             </th>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Name</th>
+            <th>Event</th>
             <th>Action</th>
           </tr>
           </thead>
           <tbody>
-          {this.state.users.map((el) => {
+          {this.state.cases.map((el) => {
             return (
-              <tr key={el.id.toString()}>
+              <tr key={el.id}>
                 <td>
                   <FormGroup check className="checkbox">
                     <Input
@@ -59,18 +93,18 @@ class Cases extends Component {
                   </FormGroup>
                 </td>
                 <td>{el.id}</td>
-                <td>{el.firstname}</td>
-                <td>{el.lastname}</td>
+                <td>{el.name}</td>
+                <td>
+                  <Link to={"/event/" + el.eventId}>{this.getEventName(el.eventId)}</Link>
+                </td>
                 <td>
                   <Button block color="ghost-primary">
-                    <i className="fa fa-pencil  "></i><br/>EDIT
+                    <i className="fa fa-pencil"></i><br/>EDIT
                   </Button>
                 </td>
               </tr>
             )
           })}
-
-
           </tbody>
         </Table>
       </div>

@@ -6,10 +6,10 @@ export default {
       icon: 'icon-speedometer',
       badge: {
         variant: 'info',
-        text: 'NEW',
-      },
+        text: 'ALIBI',
+      }
     },
-    {
+    /*{
       title: true,
       name: 'Menu',
       wrapper: {            // optional wrapper object
@@ -17,13 +17,13 @@ export default {
         attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
       },
       class: ''             // optional class names space delimited list for title item ex: "text-center"
-    },{
+    },*/{
       name: 'Events',
       url: '/events',
       icon: 'icon-pencil',
     },
     {
-      name: 'Cases_old',
+      name: 'Cases',
       url: '/cases',
       icon: 'icon-pencil',
     },
@@ -31,7 +31,7 @@ export default {
       name: 'Users',
       url: '/users',
       icon: 'icon-pencil',
-    },{
+    }, {
       name: 'Tags',
       url: '/tags',
       icon: 'icon-pencil',

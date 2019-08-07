@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Cases = React.lazy(() => import('./views/ABCases/Cases_old'));
+const Cases = React.lazy(() => import('./views/ABCases/Cases'));
 const Events = React.lazy(() => import('./views/ABEvents/Events'));
 const Users = React.lazy(() => import('./views/ABUsers/Users'));
 const Tags = React.lazy(() => import('./views/ABTags/Tags'));
+const Creat = React.lazy(() => import('./views/ABCreated/Creat'));
 
 /****************************************************************************/
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
@@ -49,6 +50,7 @@ const routes = [
   { path: '/cases', name: 'Cases_old', component: Cases },
   { path: '/users', name: 'Users', component: Users },
   { path: '/tags', name: 'Tags', component: Tags },
+  { path: '/create', name: 'Create', component: Creat },
 
   /*****************************************************************/
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
