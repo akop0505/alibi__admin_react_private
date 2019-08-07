@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cases = React.lazy(() => import('./views/ABCases/Cases'));
+const Cases = React.lazy(() => import('./views/ABCases/Cases_old'));
 const Events = React.lazy(() => import('./views/ABEvents/Events'));
 const Users = React.lazy(() => import('./views/ABUsers/Users'));
 const Tags = React.lazy(() => import('./views/ABTags/Tags'));
@@ -46,7 +46,7 @@ const User = React.lazy(() => import('./views/Users/User'));
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/events', name: 'Events', component: Events },
-  { path: '/cases', name: 'Cases', component: Cases },
+  { path: '/cases', name: 'Cases_old', component: Cases },
   { path: '/users', name: 'Users', component: Users },
   { path: '/tags', name: 'Tags', component: Tags },
 

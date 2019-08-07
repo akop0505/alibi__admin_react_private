@@ -23,7 +23,7 @@ export default {
       icon: 'icon-pencil',
     },
     {
-      name: 'Cases',
+      name: 'Cases_old',
       url: '/cases',
       icon: 'icon-pencil',
     },

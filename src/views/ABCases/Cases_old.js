@@ -5,7 +5,7 @@ import {Button, Card, CardBody, CardHeader, Col, Input, Row, Table} from "reacts
 import {api} from '../../services/API';
 
 
-class Cases extends Component {
+class Cases_old extends Component {
   events = [];
 
   constructor(props) {
@@ -101,5 +101,5 @@ class Cases extends Component {
   }
 }
 
-export default Cases;
+export default Cases_old;
 
