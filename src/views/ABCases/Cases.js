@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
 import {api} from './../../services/API';
 import {Link} from "react-router-dom";
+import '../AdminPanel.css'
 
 class Cases extends Component {
 
@@ -70,7 +71,7 @@ class Cases extends Component {
                 <Label check className="form-check-label" htmlFor="checkbox1"></Label>
               </FormGroup>
             </th>
-            <th>ID</th>
+            <th>Id</th>
             <th>Name</th>
             <th>Event</th>
             <th>Action</th>

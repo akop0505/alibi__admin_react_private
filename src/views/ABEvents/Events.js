@@ -5,7 +5,7 @@ import moment from 'moment';
 import {api} from './../../services/API';
 import Creat from '../ABCreated/Creat';
 import { Link } from 'react-router-dom';
-import './Events.css'
+import '../AdminPanel.css'
 
 
 
@@ -76,17 +76,20 @@ getParsent(data){
                                         <Label check className="form-check-label" htmlFor="checkbox1"></Label>
                                     </FormGroup>
                                 </th>
-                                <th>id</th>
+                                <th>Id</th>
                                 <th>Name</th>
                                 <th>Discription</th>
                                 <th>Label</th>
                                 <th>creation <br/>data</th>
                                 <th>Header<br/> tamblet</th>
-                                <Link to={`/Create`} >
-                                    <th><Button block color="ghost-primary"><i className="fa fa-plus  mt-4"></i>CREATE</Button>
-                                    </th>
-                                </Link>
-                                <th><Button block color="ghost-primary"><i className="fa fa-download  mt-4"></i>EXPORT</Button></th>
+                                <th>
+                                    <Link to={`/create`} >
+                                        <i className="fa fa-plus  mt-4"/>CREATE
+                                    </Link>
+                                    <Link to={`#`}>
+                                        <i className="fa fa-download  mt-4"/>EXPORT
+                                    </Link>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>

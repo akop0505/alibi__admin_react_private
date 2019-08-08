@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
 import {api} from './../../services/API';
+import '../AdminPanel.css'
 
-class Cases extends Component {
+class Users extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +37,7 @@ class Cases extends Component {
                 <Label check className="form-check-label" htmlFor="checkbox1"></Label>
               </FormGroup>
             </th>
-            <th>ID</th>
+            <th>Id</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Action</th>
@@ -78,5 +79,5 @@ class Cases extends Component {
   }
 }
 
-export default Cases;
+export default Users;
 
