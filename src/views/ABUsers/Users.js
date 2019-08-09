@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
+import {Link} from 'react-router-dom'
 import {api} from './../../services/API';
 import '../AdminPanel.css'
 
@@ -22,6 +23,7 @@ class Users extends Component {
   render() {
     return (
       <div className={'text-center'}>
+          
         <Table responsive>
           <thead>
           <tr>
@@ -40,7 +42,9 @@ class Users extends Component {
             <th>Id</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Action</th>
+            <th>
+            <Link to={"/users/create"} name="go to create"><i className="fa fa-plus  mt-4"/>CREATE</Link>
+            </th>
           </tr>
           </thead>
           <tbody>
