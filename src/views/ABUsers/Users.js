@@ -20,6 +20,7 @@ class Users extends Component {
     });
   };
 
+
   render() {
     return (
       <div className={'text-center'}>
@@ -43,7 +44,7 @@ class Users extends Component {
             <th>First Name</th>
             <th>Last Name</th>
             <th>
-            <Link to={"/users/create"} name="go to create"><i className="fa fa-plus  mt-4"/>CREATE</Link>
+            <Link to={"/users/create"} name="go to create" ><i className="fa fa-plus"/>  CREATE</Link>
             </th>
           </tr>
           </thead>
@@ -67,9 +68,11 @@ class Users extends Component {
                 <td>{el.firstname}</td>
                 <td>{el.lastname}</td>
                 <td>
-                  <Button block color="ghost-primary">
-                    <i className="fa fa-pencil  "></i><br/>EDIT
-                  </Button>
+                <Link to={`/users/${el.id}`} className="btn btn-primary">
+                <i className="fa fa-pencil"></i>  Edit
+                </Link>
+                    
+                  
                 </td>
               </tr>
             )
