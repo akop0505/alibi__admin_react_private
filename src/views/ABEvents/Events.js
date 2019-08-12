@@ -3,7 +3,7 @@ import {events} from './data';
 import {Row, Table, FormGroup,Input,Label,Button} from 'reactstrap';
 import moment from 'moment';
 import {api} from './../../services/API';
-import Creat from '../ABCreated/Creat';
+import Create from './Create';
 import { Link } from 'react-router-dom';
 import '../AdminPanel.css'
 
@@ -83,7 +83,7 @@ getParsent(data){
                                 <th>creation <br/>data</th>
                                 <th>Header<br/> tamblet</th>
                                 <th>
-                                    <Link to={`/create`} >
+                                    <Link to={`/events/create`} >
                                         <i className="fa fa-plus  mt-4"/>CREATE
                                     </Link>
                                     <Link to={`#`}>

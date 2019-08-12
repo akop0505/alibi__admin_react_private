@@ -4,7 +4,7 @@ const Cases = React.lazy(() => import('./views/ABCases/Cases'));
 const Events = React.lazy(() => import('./views/ABEvents/Events'));
 const Users = React.lazy(() => import('./views/ABUsers/Users'));
 const Tags = React.lazy(() => import('./views/ABTags/Tags'));
-const Creat = React.lazy(() => import('./views/ABCreated/Creat'));
+const Creat = React.lazy(() => import('./views/ABEvents/Create'));
 
 /****************************************************************************/
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
@@ -46,11 +46,11 @@ const User = React.lazy(() => import('./views/Users/User'));
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/events', name: 'Events', component: Events },
+  { path: '/events', exact: true, name: 'Events', component: Events },
   { path: '/cases', name: 'Cases_old', component: Cases },
   { path: '/users', name: 'Users', component: Users },
   { path: '/tags', name: 'Tags', component: Tags },
-  { path: '/create', name: 'Create', component: Creat },
+  { path: '/events/create', name: 'Create', component: Creat },
 
   /*****************************************************************/
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
