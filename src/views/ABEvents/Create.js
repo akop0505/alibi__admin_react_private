@@ -25,11 +25,9 @@ class Create extends React.Component {
     const {event} = this.state;
     event.headerTemplate[index][key] = value;
     this.setState({event});
-    console.log(event);
   }
 
   save = () => {
-    console.log(this.state.event);
     this.state.event.save().then(data => {
       this.props.history.push('/events');
     });
@@ -56,7 +54,6 @@ class Create extends React.Component {
   removeHeaderElement = (index) => {
     const event = this.state.event;
     event.headerTemplate.splice(index, 1);
-    console.log(event.headerTemplate);
     this.setState({event});
   };
 
