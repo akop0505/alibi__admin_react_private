@@ -19,7 +19,10 @@ class CreateUser extends React.Component{
             id:this.state.id,
             lastname:this.state.lastname,
             firstname:this.state.firstname,
+            
         }).then(res => {
+            const id = res.data.id;
+            this.props.history.push(`/users/${id}`)
           }).catch(error=>{
                 
           })
@@ -32,7 +35,7 @@ class CreateUser extends React.Component{
                         <CardBody>
                             <Row>
                                 <Col xs="12">
-                                    <FormGroup onSubmit={this.handleSubmit} >
+                                    <FormGroup onSubmit={this.handleSubmit}>
                                         <Label htmlFor="firstname">Firstname</Label>
                                         <Input 
                                             type="text" 
@@ -55,7 +58,7 @@ class CreateUser extends React.Component{
                             <Col sm xs="12" className="text-center mt-3">
                                 <Button 
                                     color="primary" 
-                                    onClick={this.handleSubmit} >
+                                    onClick={this.handleSubmit}>
                                 <i className="fa fa-save "></i>
                                 &nbsp;SAVE
                                 </Button>

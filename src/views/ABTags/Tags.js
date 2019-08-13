@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
 import {api} from './../../services/API';
-import '../AdminPanel.css'
+import '../AdminPanel.css';
+import {Link} from 'react-router-dom'
+
 
 class Users extends Component {
   constructor(props) {
@@ -24,17 +26,17 @@ class Users extends Component {
       <div className={'text-center'}>
         <Table responsive>
           <thead>
-          <tr>
-            <th>
-              <FormGroup check className="checkbox">
-                <Input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="checkbox1"
-                  name="checkbox1"
-                  value="option1"
-                />
-                <Label check className="form-check-label" htmlFor="checkbox1"></Label>
+            <tr>
+              <th>
+                <FormGroup check className="checkbox">
+                  <Input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="checkbox1"
+                    name="checkbox1"
+                    value="option1"
+                    />
+                  <Label check className="form-check-label" htmlFor="checkbox1"></Label>
               </FormGroup>
             </th>
             <th>Id</th>
@@ -61,9 +63,9 @@ class Users extends Component {
                 <td>{el.id}</td>
                 <td>{el.text}</td>
                 <td>
-                  <Button block color="ghost-primary">
-                    <i className="fa fa-pencil  "></i><br/>EDIT
-                  </Button>
+                <Link to={`/tags/${el.id}`} className="btn btn-primary">
+                <i className="fa fa-pencil"></i>  Edit
+                </Link>
                 </td>
               </tr>
             )
