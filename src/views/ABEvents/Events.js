@@ -83,7 +83,7 @@ getParsent(data){
                                 <th>creation <br/>data</th>
                                 <th>Header<br/> tamblet</th>
                                 <th>
-                                    <Link to={'#'} >
+                                    <Link to={'/events/create'} >
                                         <i className="fa fa-plus"/>&nbsp;CREATE
                                     </Link>
                                 </th>
