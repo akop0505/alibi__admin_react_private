@@ -1,11 +1,12 @@
 import {api} from "../services/API";
+import moment from "moment";
 
 class Event {
 
-  name = "Anun";
-  description = "Nkaragrutyun";
-  label = "Label";
-  creationDate = "2019-08-11T11:13:13.452Z";
+  name = "test name";
+  description = "<div>Body description</div>";
+  label = "<div>Body label</div>";
+  creationDate = moment("2019-08-11").format("YYYY-MM-DD");
   headerTemplate = [];
 
   constructor(data = null) {
@@ -18,13 +19,26 @@ class Event {
     }
   }
 
+  getAttributes() {
+    return {
+      name: this.name,
+      description: this.description,
+      label: this.label,
+      creationDate: this.creationDate,
+      headerTemplate: JSON.stringify(this.headerTemplate)
+    }
+  }
+
   async getAll() {
 
   }
 
   async save() {
-    const response = await api.post('/api/Events');
+    console.log(this);
+
+    const response = await api.post('/events', this.getAttributes());
     console.log(response.data);
+    return response.data;
   }
 
   async edit() {

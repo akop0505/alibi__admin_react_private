@@ -8,7 +8,7 @@ class Create extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editHeader: true,
+      editHeader: false,
       event: new Event()
     };
   }
@@ -16,17 +16,23 @@ class Create extends React.Component {
   contactType = ['phone', 'twitter', 'facebook', 'email'];
 
   setBodyValue(key, value) {
-    this.setState({[key]: value});
+    const event = this.state.event;
+    event[key] = value;
+    this.setState({event});
   }
 
   setHeaderValue(index, key, value) {
-    const {headerTemplate} = this.state.event;
-    headerTemplate[index][key] = value;
-    this.setState({headerTemplate});
+    const {event} = this.state;
+    event.headerTemplate[index][key] = value;
+    this.setState({event});
+    console.log(event);
   }
 
   save = () => {
-    console.log(this.state);
+    console.log(this.state.event);
+    this.state.event.save().then(data => {
+      this.props.history.push('/events');
+    });
   };
 
   pushHeaderElement = (type) => {
@@ -35,17 +41,23 @@ class Create extends React.Component {
       headerTemplate.push({
         "type": "companyDescription",
         "text": "",
-        "title": true
+        "title": false
       },);
     }
     if (type === "contact") {
       headerTemplate.push({
         "type": "companyContacts",
-        "title": "",
         "text": ""
       })
     }
     this.setState({headerTemplate})
+  };
+
+  removeHeaderElement = (index) => {
+    const event = this.state.event;
+    event.headerTemplate.splice(index, 1);
+    console.log(event.headerTemplate);
+    this.setState({event});
   };
 
   renderBody(event) {
@@ -61,15 +73,13 @@ class Create extends React.Component {
               <Row>
                 <Col xs="6">
                   <FormGroup>
-                    <Label htmlFor="name">
+                    <Label>
                       <strong>
                         Name
                       </strong>
                     </Label>
                     <Input type="text"
-                           id="name"
                            placeholder="Enter name"
-                           require
                            defaultValue={event.name}
                            onChange={(event) => this.setBodyValue('name', event.target.value)}
                     />
@@ -86,7 +96,7 @@ class Create extends React.Component {
                            id="date-input"
                            name="date-input"
                            placeholder="date"
-                           defaultValue={event.creationData}
+                           defaultValue={event.creationDate}
                            onChange={(event) => this.setBodyValue('creationData', event.target.value)}
                     />
                   </FormGroup>
@@ -153,34 +163,51 @@ class Create extends React.Component {
               <Row>
                 {/*First block*/}
                 <Col xs="6">
+                  <h4>Descriptions</h4>
                   {
-                    headerTemplate.map((item) => {
+                    headerTemplate.map((item, key) => {
                       if (item.type === 'companyDescription') {
                         return (
                           <Row style={{height: "213px", backgroundColor: '#f9f9f9'}}
-                               className={'align-content-between border'}>
+                               className={'align-content-between border'} key={Math.random() + key}>
                             <Col xs={'12'}>
                               <FormGroup>
-                                <Label htmlFor="name">
+                                <Label>
                                   <strong>
                                     Name
                                   </strong>
                                 </Label>
-                                <Input type="text" id="name" placeholder="Enter name" required/>
+                                <Input type="text"
+                                       key={"companyDescription" + key}
+                                       name={'companyDescription' + key}
+                                       placeholder="Enter name"
+                                       defaultValue={item.text}
+                                       onBlur={(event) => {
+                                         this.setHeaderValue(key, "text", event.target.value)
+                                       }}
+                                />
                               </FormGroup>
                             </Col>
                             <Col xs={'12'}>
                               <FormGroup check className="checkbox">
-                                <Input className="form-check-input" type="checkbox" id="checkbox1" name="checkbox1"
-                                       value="option1"/>
-                                <Label check className="form-check-label" htmlFor="checkbox1">Title</Label>
+                                <Input className="form-check-input"
+                                       type="checkbox"
+                                       id={"checkbox1" + key}
+                                       name={"checkbox1" + key}
+                                       checked={item.title}
+                                       onChange={(event) => {
+                                         this.setHeaderValue(key, "title", !item.title)
+                                       }}/>
+                                <Label check className="form-check-label" htmlFor={"checkbox1" + key}>Title</Label>
                               </FormGroup>
                             </Col>
                             <Col xs={'12'}>
                               <Row className={'justify-content-center'}>
                                 <Col xs={'3'}>
                                   <FormGroup>
-                                    <Button block color="danger">DELETE</Button>
+                                    <Button block color="danger" onClick={() => {
+                                      this.removeHeaderElement(key)
+                                    }}>DELETE</Button>
                                   </FormGroup>
                                 </Col>
                               </Row>
@@ -202,11 +229,12 @@ class Create extends React.Component {
                 </Col>
                 {/*Second block*/}
                 <Col xs="6">
+                  <h4>Contacts</h4>
                   {
-                    headerTemplate.map((item) => {
+                    headerTemplate.map((item, key) => {
                       if (item.type === 'companyContacts') {
                         return (
-                          <Row style={{backgroundColor: '#f9f9f9'}} className={'border'}>
+                          <Row style={{backgroundColor: '#f9f9f9'}} className={'border'} key={Math.random() + key}>
                             <Col xs={'12'}>
                               <FormGroup>
                                 <Label htmlFor="ccyear">
@@ -214,7 +242,11 @@ class Create extends React.Component {
                                     Contact type
                                   </strong>
                                 </Label>
-                                <Input type="select" name="ccyear" id="ccyear">
+                                <Input type="select" name="ccyear" id="ccyear"
+                                       defaultValue={item.title}
+                                       onClick={(event) => {
+                                         this.setHeaderValue(key, 'title', event.target.value)
+                                       }}>
                                   <option value={null}></option>
                                   {this.contactType.map(item => {
                                     return (<option key={Math.random() / 1000} value={item}>{item}</option>);
@@ -229,14 +261,22 @@ class Create extends React.Component {
                                     Contact Text:
                                   </strong>
                                 </Label>
-                                <Input type="text" id="name" placeholder="Enter contact" required/>
+                                <Input type="text"
+                                       placeholder="Enter contact"
+                                       defaultValue={item.text}
+                                       onBlur={(event) => {
+                                         this.setHeaderValue(key, "text", event.target.value)
+                                       }}
+                                />
                               </FormGroup>
                             </Col>
                             <Col xs={'12'}>
                               <Row className={'justify-content-center'}>
                                 <Col xs={'3'}>
                                   <FormGroup>
-                                    <Button block color="danger">DELETE</Button>
+                                    <Button block color="danger" onClick={() => {
+                                      this.removeHeaderElement(key)
+                                    }}>DELETE</Button>
                                   </FormGroup>
                                 </Col>
                               </Row>
