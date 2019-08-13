@@ -9,6 +9,7 @@ const CreatUser = React.lazy(() => import('./views/ABUsers/CreateUser'));
 const UserEdit = React.lazy(() => import('./views/ABUsers/UserEdit'));
 const TagsCreate = React.lazy(() => import('./views/ABTags/TagsCreate'));
 const TagsEdit = React.lazy(() => import('./views/ABTags/TagsEdit'));
+const CaseEdit = React.lazy(() => import('./views/ABCases/CaseEdit'));
 
 
 /****************************************************************************/
@@ -54,7 +55,7 @@ const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/events', name: 'Events', component: Events },
   { path: '/events/create', name: 'Create', component: Creat },
-  { path: '/cases', name: 'Cases', component: Cases },
+  { path: '/cases', exact: true, name: 'Cases', component: Cases },
   { path: '/tags', exact: true, name: 'Tags', component: Tags },
   { path: '/create', name: 'Create', component: Creat },
   { path: '/users',  exact: true, name: 'Users', component: Users },
@@ -62,6 +63,7 @@ const routes = [
   { path: '/users/:id', name: 'UserEdit', component: UserEdit },
   { path: '/tags/create', name: 'TagsCreate', component: TagsCreate },
   { path: '/tags/:id', name: 'TagsEdit', component: TagsEdit },
+  { path: '/cases/:id', name: 'CaseEdit', component: CaseEdit },
 
   /*****************************************************************/
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },

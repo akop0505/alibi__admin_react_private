@@ -99,9 +99,9 @@ class Cases extends Component {
                   <Link to={"/event/" + el.eventId}>{this.getEventName(el.eventId)}</Link>
                 </td>
                 <td>
-                  <Button block color="ghost-primary">
-                    <i className="fa fa-pencil"></i><br/>EDIT
-                  </Button>
+                <Link to={`/cases/${el.id}`} className="btn btn-primary">
+                <i className="fa fa-pencil"></i>  Edit
+                </Link>
                 </td>
               </tr>
             )

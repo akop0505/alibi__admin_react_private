@@ -41,7 +41,14 @@ class Users extends Component {
             </th>
             <th>Id</th>
             <th>text</th>
-            <th>Action</th>
+            <th>
+              <Link to={'/tags/create'} >
+                <i className="fa fa-plus"/>&nbsp;CREATE
+              </Link>   
+              <Link to={`#`} className='exportLeft'>
+                <i className="fa fa-download "/>&nbsp;EXPORT
+              </Link>
+            </th>
           </tr>
           </thead>
           <tbody>

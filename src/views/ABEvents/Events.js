@@ -83,11 +83,13 @@ getParsent(data){
                                 <th>creation <br/>data</th>
                                 <th>Header<br/> tamblet</th>
                                 <th>
-                                    <Link to={`/events/create`} >
-                                        <i className="fa fa-plus  mt-4"/>CREATE
+                                    <Link to={'#'} >
+                                        <i className="fa fa-plus"/>&nbsp;CREATE
                                     </Link>
+                                </th>
+                                <th>    
                                     <Link to={`#`}>
-                                        <i className="fa fa-download  mt-4"/>EXPORT
+                                        <i className="fa fa-download "/>&nbsp;EXPORT
                                     </Link>
                                 </th>
                             </tr>
@@ -113,15 +115,19 @@ getParsent(data){
                                         <td dangerouslySetInnerHTML={{__html: el.label}}/>
                                         <td>{moment(el.creationDate).format("DD.MM.YYYY")}</td>
                                         <td>
-                                            <Button active block color="primary" aria-pressed="true" 
+                                            <Button block outline color="info" 
                                             onClick={()=>{_this.togglePreviw(el.headerTemplate)}}>
                                             SHOW<br/>
                                             HEADER<br/>
                                             PREVIEW
                                             </Button>
                                         </td>
-                                        <td><Button block color="ghost-primary"><i className="fa fa-pencil  "></i><br/>EDIT</Button></td>
-                                        <td><Button block color="ghost-primary"><i className="fa fa-eye  "></i>SHOW</Button></td>
+                                        <td><Link to='#'className="btn btn-primary">
+                                                <i className="fa fa-pencil">&nbsp;EDIT</i></Link>
+                                        </td>
+                                        <th>
+                                        <Link to='#' className="btn btn-primary"><i className="fa fa-eye">&nbsp;SHOW</i></Link>
+                                        </th>
                                     </tr>
                                 )
                                 })
