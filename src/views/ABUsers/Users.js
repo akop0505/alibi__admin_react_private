@@ -16,7 +16,6 @@ class Users extends Component {
     api.get('/users').then(res => {
       const users = res.data;
       this.setState({users});
-      console.log(users)
     });
   };
 
