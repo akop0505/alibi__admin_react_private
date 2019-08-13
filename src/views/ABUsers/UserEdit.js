@@ -1,5 +1,13 @@
 import React from 'react';
-import {Input, Label, Button,FormGroup,Col,Row,CardBody,Card,CardHeader} from 'reactstrap';
+import {Input,
+        Label,
+        Button,
+        FormGroup,
+        Col,
+        Row,
+        CardBody,
+        Card,
+        } from 'reactstrap';
 import { api } from '../../services/API';
 
 class UserEdit extends React.Component{
