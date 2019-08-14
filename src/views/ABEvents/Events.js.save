@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import {Row, Table, FormGroup, Input, Label, Button} from 'reactstrap';
 import moment from 'moment';
@@ -167,9 +168,9 @@ class Events extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        {/*<Row>
+        <Row>
           <PlacePicker/>
-        </Row>*/}
+        </Row>
         <Row>
           {!this.state.showHeaderPreview ? this.renderTable() : this.renderHeaderPreview()}
         </Row>
