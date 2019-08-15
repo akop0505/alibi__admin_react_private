@@ -34,10 +34,7 @@ class Event {
   }
 
   async save() {
-    console.log(this);
-
     const response = await api.post('/events', this.getAttributes());
-    console.log(response.data);
     return response.data;
   }
 

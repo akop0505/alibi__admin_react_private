@@ -1,0 +1,14 @@
+    
+.map-cintainer{
+    display: flex;
+    flex-direction: column;
+    /* width: 300px;
+    height: 300px; */
+    overflow: hidden;
+}
+
+.map-input{
+    margin: 10px;
+    margin-left: 0;
+    width: 50%;
+}
