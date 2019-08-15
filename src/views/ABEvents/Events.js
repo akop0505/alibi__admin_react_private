@@ -3,7 +3,6 @@ import {events} from './data';
 import {Row, Table, FormGroup,Input,Label,Button} from 'reactstrap';
 import moment from 'moment';
 import {api} from './../../services/API';
-import Create from './Create';
 import { Link } from 'react-router-dom';
 import '../AdminPanel.css'
 
