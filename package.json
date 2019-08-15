@@ -9,6 +9,8 @@
   "private": true,
   "repository": {},
   "dependencies": {
+    "2gis-maps": "^3.5.9",
+    "2gis-maps-react": "0.0.4",
     "@coreui/coreui": "^2.1.12",
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.3.1",
     "@coreui/icons": "0.3.0",

@@ -55,7 +55,7 @@ const routes = [
   {path: '/', exact: true, name: 'Home'},
   {path: '/events', exact: true, name: 'Events', component: Events},
   {path: '/events/create', name: 'Create', component: Create},
-  {path: '/cases', name: 'Cases', component: Cases},
+  {path: '/cases',exact: true,  name: 'Cases', component: Cases},
   {path: '/tags', exact: true, name: 'Tags', component: Tags},
   {path: '/users', exact: true, name: 'Users', component: Users},
   {path: '/users/create', name: 'CreateUser', component: CreatUser},
