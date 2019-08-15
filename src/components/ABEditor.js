@@ -15,7 +15,7 @@ class ABEditor extends React.Component {
   }
 
   componentDidMount() {
-    const {props, state} = this;
+    const {props} = this;
     if (props.initValue) {
       const blocksFromHTML = convertFromHTML(props.initValue);
       const iState = ContentState.createFromBlockArray(
@@ -24,7 +24,6 @@ class ABEditor extends React.Component {
       );
       this.setState({editorState: EditorState.createWithContent(iState)});
     }
-
   }
 
   onEditorStateChange = (edState) => {
