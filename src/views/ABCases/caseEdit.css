@@ -1,0 +1,20 @@
+.classesFormControl{
+    width: 200px;
+}
+.userTag{
+    margin-top: 20px;
+}
+.caseEditBody{
+    background-color:white;
+    padding: 20px;
+}
+.editFooter{
+    height: 70px;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+.buttonDel{
+    float: right;
+
+
+}

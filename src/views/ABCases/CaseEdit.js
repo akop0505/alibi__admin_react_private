@@ -1,14 +1,12 @@
 import React from "react";
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import FilledInput from "@material-ui/core/FilledInput";
 import InputLabel from "@material-ui/core/InputLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import NativeSelect from "@material-ui/core/NativeSelect";
 import {api} from './../../services/API';
-
+import PlacePicker from "../../components/PlacePicker";
+import Grid from '@material-ui/core/Grid';
+import './CaseEdit.css'
 
 class CaseEdit extends React.Component{
     constructor(props){
@@ -37,10 +35,13 @@ class CaseEdit extends React.Component{
     render(){
         return(
             <div>
+            <div className='caseEditBody'>
                 <div>
-                    <TextField id="standard-name"/>
+                    <Grid item xs={8}>
+                        <PlacePicker/>
+                    </Grid>
                 </div>
-                <div>
+                <div className='userTag'>
                     <FormControl className='classesFormControl'>
                         <InputLabel htmlFor="age-native-simple">User</InputLabel>
                         <Select
@@ -56,7 +57,7 @@ class CaseEdit extends React.Component{
                     </Select>
                 </FormControl>
                 </div>
-                <div>
+                <div className='userTag'>
                 <FormControl className='classesFormControl'>
                     <InputLabel htmlFor="age-native-simple">Tags</InputLabel>
                     <Select
@@ -72,11 +73,16 @@ class CaseEdit extends React.Component{
                     </Select>
                 </FormControl>
                 </div>
-                <Button variant="contained" color="secondary" className='classesButton'>
-        Delete
-        
-      </Button>
-            </div>
+                </div>
+                <div className="editFooter">
+                    <Button variant="contained" color="primary" className='classesButton'>
+                        <i className="fa fa-save "></i>&nbsp;Save
+                    </Button>
+                    <Button  color="secondary" className='buttonDel'>
+                        <i className="cui-trash icons "></i>&nbsp;Delete
+                    </Button>
+                </div>
+                </div>
         )
     }
 }
