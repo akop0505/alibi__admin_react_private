@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
 import {api} from './../../services/API';
 import {Link} from "react-router-dom";
+import BackButton from '../../components/AllButtons/BackButton';
 import '../AdminPanel.css'
 
 class Cases extends Component {
@@ -56,6 +57,7 @@ class Cases extends Component {
   render() {
     return (
       <div className={'text-center'}>
+        <BackButton/>
         <Table responsive>
           <thead>
           <tr>

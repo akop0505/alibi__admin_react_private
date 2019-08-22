@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
 import {Link} from 'react-router-dom'
 import {api} from './../../services/API';
-import '../AdminPanel.css'
+import '../AdminPanel.css';
+
 
 class Users extends Component {
   constructor(props) {
@@ -70,8 +71,6 @@ class Users extends Component {
                 <Link to={`/users/${el.id}`} className="btn btn-primary">
                 <i className="fa fa-pencil"></i>  Edit
                 </Link>
-                    
-                  
                 </td>
               </tr>
             )
