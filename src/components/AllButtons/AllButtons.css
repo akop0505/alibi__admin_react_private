@@ -1,4 +1,32 @@
-button{
+.ab-button {
+    color: white;
+}
+
+.btn-icon-left {
+    margin-left: 0;
+}
+
+.btn-title {
+    margin: 5px;
+    color: white;
+}
+.btn-black {
+    margin: 5px;
+    background-color: #2d2d2d;
+    border-color: #2d2d2d;
+}
+.btn-yellow {
+    margin: 5px;
+    background-color: #FFBD0A;
+    border-color: #FFBD0A;
+}
+.btn-yellow:hover {
+    background-color: #ffca39;
+    border-color: #FFBD0A;
+    color: #20a8d8;
+}
+
+button_old {
     width: 96px;
     height: 28px;
     background-color: #333333;
@@ -8,5 +36,5 @@ button{
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
-    line-height: 18px;  
+    line-height: 18px;
 }
