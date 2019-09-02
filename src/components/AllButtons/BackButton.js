@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Button} from 'reactstrap';
-import './AllButtons.css'
+import './AllButtons.css';
 
 
 class BackButton extends React.Component{

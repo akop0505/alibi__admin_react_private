@@ -1,7 +1,27 @@
 import React from 'react';
 import ABEditor from '../../components/ABEditor';
-import {Card, CardBody, CardHeader, Col, FormGroup, Input, Label, Row, Button} from "reactstrap";
+import {
+  Card, 
+  CardBody, 
+  CardHeader, 
+  Col, 
+  FormGroup,
+  Input, 
+  Label,
+  Row,
+  Button, 
+  NavItem, 
+  NavLink, 
+  Nav,
+  Badge } from "reactstrap";
 import Event from "../../Models/Event";
+import {ABButton} from "../../components/AllButtons/ABButton";
+import styled from 'styled-components';
+import './style.css';
+
+const Hr = styled.hr`
+  margin: 0.5em 0;
+`;
 
 class Create extends React.Component {
 
@@ -60,89 +80,122 @@ class Create extends React.Component {
   renderBody(event) {
     const {editHeader} = this.state;
     return (
-      <Row>
-        <Col xs="12" sm="12">
-          <Card>
-            <CardHeader>
-              <strong>Create New Event</strong>
-            </CardHeader>
-            <CardBody>
-              <Row>
-                <Col xs="6">
-                  <FormGroup>
-                    <Label>
-                      <strong>
-                        Name
-                      </strong>
-                    </Label>
-                    <Input type="text"
-                           placeholder="Enter name"
-                           defaultValue={event.name}
-                           onChange={(event) => this.setBodyValue('name', event.target.value)}
-                    />
-                  </FormGroup>
-                </Col>
-                <Col xs="6">
-                  <FormGroup>
-                    <Label htmlFor="name">
-                      <strong>
-                        Creation Date
-                      </strong>
-                    </Label>
-                    <Input type="date"
-                           id="date-input"
-                           name="date-input"
-                           placeholder="date"
-                           defaultValue={event.creationDate}
-                           onChange={(event) => this.setBodyValue('creationData', event.target.value)}
-                    />
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs="12">
-                  <FormGroup>
-                    <Label>
-                      <strong>
-                        Description
-                      </strong>
-                    </Label>
-                    <ABEditor initValue={event.description} onChange={(val) => {
-                      this.setBodyValue('description', val);
-                    }}/>
-                  </FormGroup>
-                </Col>
-                <Col xs="12">
-                  <FormGroup>
-                    <Label>
-                      <strong>
-                        Label
-                      </strong>
-                    </Label>
-                    <ABEditor initValue={event.label} onChange={(val) => {
-                      this.setBodyValue('label', val);
-                    }}/>
-                  </FormGroup>
-                </Col>
-              </Row>
-              <Row className={'justify-content-between'}>
-                <Col xs={'3'}>
-                  <FormGroup>
-                    <Button block outline color="primary" onClick={() => {
-                      this.setState({editHeader: !editHeader})
-                    }}>Edit Header</Button>
-                  </FormGroup>
-                </Col>
-                <Col xs={'3'}>
-                  <FormGroup>
-                    <Button block color="primary" onClick={this.save}>Save</Button>
-                  </FormGroup>
-                </Col>
-              </Row>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
+      <div>
+        <Hr/>
+        <Nav className={'d-flex'}>
+          <NavItem className={''}>
+            <ABButton color={'black'} name={'Back'}     icon={'reply'}/>
+          </NavItem>
+          <NavItem className={''}>
+            <ABButton color={'black'} name={'Forward'}  icon={'share'}/>
+          </NavItem>
+          <NavItem className={'flex-fill'}>
+            <ABButton color={'black'} name={'History'}  icon={'bars'}/>
+          </NavItem>
+          <NavItem className={'d-flex flex-fill justify-content-end'}>
+            <ABButton color={'black'} name={'Close'}    icon={'close'}/>
+          </NavItem>
+          <NavItem className={''}>
+            <ABButton color={'black'} name={'Archive'}  icon={'clock'}/>
+          </NavItem>
+          <NavItem className={''}>
+            <ABButton color={'yellow'}name={'Send'}     icon={'check'}/>
+          </NavItem>
+        </Nav>
+        <Hr/>
+        <Row>
+          <Col xs="12" sm="12">
+            <Row>
+              <Col xs="6">
+                <FormGroup>
+                  <Label>
+                    <strong>
+                      Case name
+                    </strong>
+                  </Label>
+                  <Input type="text"
+                         placeholder="Enter name"
+                         defaultValue={event.name}
+                         onChange={(event) => this.setBodyValue('name', event.target.value)}
+                  />
+                </FormGroup>
+              </Col>
+              <Col xs="6">
+                <FormGroup>
+                  <Label htmlFor="name">
+                    <strong>
+                      Creation Date
+                    </strong>
+                  </Label>
+                  <Input type="date"
+                         id="date-input"
+                         name="date-input"
+                         placeholder="date"
+                         defaultValue={event.creationDate}
+                         onChange={(event) => this.setBodyValue('creationData', event.target.value)}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="12">
+                <FormGroup>
+                  <Label>
+                    <strong>
+                      Description to case
+                    </strong>
+                  </Label>
+                  <ABEditor initValue={event.description} onChange={(val) => {
+                    this.setBodyValue('description', val);
+                  }}/>
+                </FormGroup>
+              </Col>
+              <Col xs="12">
+                <FormGroup>
+                  <Label>
+                    <strong>
+                      Label
+                    </strong>
+                  </Label>
+                  <ABEditor initValue={event.label} onChange={(val) => {
+                    this.setBodyValue('label', val);
+                  }}/>
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={'3'}>
+                <ABButton name={"Add audion"} icon={'audion'} btnStyle={{marginLeft:0}}/>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={'6'}>
+                <FormGroup>
+                  <Label>
+                    <strong>
+                      Case type
+                    </strong>
+                  </Label>
+                  <Input type="select" name="select" id="select">
+                    <option value="0">Please check the type</option>
+                    <option value="1">Public</option>
+                    <option value="2">Personal</option>
+                  </Input>
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={'12'}> 
+                <div className={"event-tags d-inline-flex justify-content-center align-items-center"}>
+                  <span>Tag name</span>
+                  <i className={'fa fa-circle 1x'}/>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </div>
+
     );
   }
 
@@ -224,6 +277,7 @@ class Create extends React.Component {
                     </Col>
                   </Row>
                 </Col>
+
                 {/*Second block*/}
                 <Col xs="6">
                   <h4>Contacts</h4>
@@ -295,7 +349,7 @@ class Create extends React.Component {
                   </Row>
                 </Col>
               </Row>
-              <Row className={'justify-content-end'}>
+              {/* <Row className={'justify-content-end'}>
                 <Col xs={'3'}>
                   <FormGroup>
                     <Button block outline color="primary" onClick={() => {
@@ -303,7 +357,7 @@ class Create extends React.Component {
                     }}>Save</Button>
                   </FormGroup>
                 </Col>
-              </Row>
+              </Row> */}
             </CardBody>
           </Card>
         </Col>
@@ -315,12 +369,22 @@ class Create extends React.Component {
     const {state} = this;
     return (
       <div className="animated fadeIn">
-        {
-          !state.editHeader ?
-            this.renderBody(state.event)
-            :
-            this.renderEditHeader(state.event)
-        }
+        {this.renderBody(state.event)}
+        {this.renderEditHeader(state.event)}
+        <Row className={'justify-content-end'}>
+            {/* <Col xs={'3'}>
+              <FormGroup>
+                <Button block outline color="primary" onClick={() => {
+                  this.setState({editHeader: !editHeader})
+                }}>Edit Header</Button>
+              </FormGroup>
+            </Col> */}
+            <Col xs={'3'}>
+              <FormGroup>
+                <Button block color="primary" onClick={this.save}>Save</Button>
+              </FormGroup>
+            </Col>
+        </Row>
       </div>
     )
   }
