@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import {events} from './data';
 import {Row, Table, FormGroup,Input,Label,Button} from 'reactstrap';
 import moment from 'moment';
 import {api} from './../../services/API';
 import { Link } from 'react-router-dom';
-import '../AdminPanel.css'
+import '../AdminPanel.css';
+import EventV1 from './EventV1'
+import EventNav from './EventNav';
+import './EventsStyle.css';
 
 
 
@@ -60,7 +62,9 @@ getParsent(data){
         }
     renderTable() {
         const _this = this;
-            return(<Table responsive className='eventsTable'>
+            return(
+                
+                <Table responsive className='eventsTable'>
                         <thead>
                             <tr>
                                 <th>
@@ -150,7 +154,7 @@ getParsent(data){
                 })}
                 </div>
                 </div> 
-                <div className='buttonCLos'>
+                <div className='buttonCLoss'>
                 <Button block color="primary" aria-pressed="true" onClick={()=>{ this.togglePreviw()}}>clos</Button>
                 </div>
             </div>
@@ -160,6 +164,8 @@ getParsent(data){
     render() {
         return (
             <div className="animated fadeIn">
+                <EventNav/>
+                <EventV1/>
                 <Row>
                     { !this.state.showHeaderPreview ? this.renderTable() : this.renderHeaderPreview() }
                 </Row>

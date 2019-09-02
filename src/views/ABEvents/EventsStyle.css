@@ -1,0 +1,104 @@
+
+.cardBody{
+    background-color: #FFFFFF;
+}
+.topImg{
+    margin-top: 9.22px;
+}
+.headerName{
+    font-size: 19px;
+    line-height: 22px;
+    letter-spacing: 0.374px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: #909090;
+}
+.headerTopic{
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: #909090;  
+}
+.eventTime{
+    font-size: 13px;
+    line-height: 18px;
+    float: right;
+    margin-top: 11px;
+}
+.cardHeader{
+    padding: 5px 15px 0 15px;
+}
+.svgDown{
+    border-top: 1px solid #c8ced3;
+    border-bottom: 1px solid #c8ced3;
+}
+.contactsTable{
+    border-bottom: 1px solid #c8ced3;
+}
+.allContacts{
+    padding-left: 16px;
+}
+.oneContact{
+    border-top: 1px solid #c8ced3;
+    height: 24px    ;
+}
+.contactKey{
+    width: 94px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333333;
+    letter-spacing: 0.0128571em;
+
+}
+.contactTable{
+    width: 100%;
+}
+.contactValue{
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+color: #909090;
+}
+.eventImg{
+    height: 80px;
+    width: 80px;
+}
+.upDownSvg{
+    margin-left: 125px;
+}
+.form-horizontal{
+  
+background: #FFFFFF;
+/* Frame */
+border: 0.5px solid #C8CED3;
+font-size: 17px;
+line-height: 20px;
+color: #333333;
+padding: 15px 35px 15px 35px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+}
+.resetButton{
+    float: right;
+    width: 118px;
+    height: 28px;
+    color: white;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+}
+.eventsBody{
+    margin-top: 20px;
+}
