@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
+import {Table, Input, Label, FormGroup, Button,Progress} from 'reactstrap';
 import {Link} from 'react-router-dom'
 import {api} from './../../services/API';
-import '../AdminPanel.css';
+import './UserTamplate.css';
 
 
 class Users extends Component {
@@ -13,19 +13,19 @@ class Users extends Component {
     }
   };
 
-  componentDidMount() {
-    api.get('/users').then(res => {
-      const users = res.data;
-      this.setState({users});
-    });
-  };
+  // componentDidMount() {
+  //   api.get('/users').then(res => {
+  //     const users = res.data;
+  //     this.setState({users});
+  //   });
+  // };
 
 
-  render() {
-    return (
-      <div className={'text-center'}>
+render() {
+  return (
+    <div className={'text-center'}>
           
-        <Table responsive>
+        {/* <Table responsive>
           <thead>
           <tr>
             <th>
@@ -78,8 +78,59 @@ class Users extends Component {
 
 
           </tbody>
-        </Table>
-      </div>
+        </Table> */}
+      <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
+        <thead style={{backgroundColor:"#C8CED3", height:"40px"}} >
+          <tr>
+            <th className="text-center"></th>
+            <th className="text-left"><i className="icon-people icons font-2xl d-block mt-4"></i></th>
+            <th className="text-left">User</th>
+            <th className="text-left">ID</th>
+            <th className="text-left">Country</th>
+            <th className="text-left">Cases</th>
+            <th><Button color="danger">Block(2)</Button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={{padding:"0 0 30px 20px"}}>
+              <Input className="form-check-input" type="checkbox" id="checkbox1" name="checkbox1" 
+                style={{
+                width:"22px",
+                height:"22px",
+                background: "#FFFFFF",
+                border: "1px solid #292929",
+                boxSizing:"border-box", 
+                }}
+              />
+            </td>
+            <td className="text-left">
+              <div className="avatar">
+                <img src={'assets/img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+              </div>
+            </td>
+            <td className="text-left">
+              <div>Annie_hall123</div>
+              <div className="small text-muted">
+                Registered: Jan 1, 2019
+              </div>
+            </td>
+            <td className="text-left">
+              abcfe
+            </td>
+            <td className="text-left">
+              <i className="flag-icon flag-icon-de h4 mb-0" title="de" id="de"></i>
+            </td>
+            <td className="text-left">
+              29
+            </td>
+            <td>
+              <Button color="dark" >Message</Button>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+    </div>
     );
   }
 }

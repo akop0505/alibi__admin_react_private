@@ -1,0 +1,19 @@
+.nav-link{
+    color: #0e0000;
+    font-size: 19px;
+    line-height: 22px;
+    text-decoration: none;
+}
+.alibiLogo{
+    font-size: 22px;
+    line-height: 26px;
+    color: #FFBD0A;
+}
+.adminLogo{
+    font-size: 22px;
+    line-height: 26px;
+    color: #333333;;
+}
+.nav-link.active:hover{
+    color: #FFBD0A;
+}
