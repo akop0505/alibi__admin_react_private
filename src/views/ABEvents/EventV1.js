@@ -19,6 +19,7 @@ class EventV1 extends React.Component{
                             </div>
                             <CardBody>
                                 <EventsText/>
+                                <audio controls></audio>
                                 <EventsImg/>
                             </CardBody>
                         </Card>
@@ -47,8 +48,7 @@ class EventV1 extends React.Component{
                             </CardBody>
                         </Card>
                     </Col>
-                </Row>
-                
+                </Row>  
             </div>
         )
     }
