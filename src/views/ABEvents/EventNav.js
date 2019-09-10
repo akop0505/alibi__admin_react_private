@@ -27,6 +27,7 @@ import {
 import EventMediaInput from './EventMediaInput';
 import EventDataInput from './EventDataInput';
 import './EventsStyle.css';
+import { ABSearch } from '../../components/ABSearch/ABSearch';
 
 
 
@@ -36,8 +37,9 @@ class EventNav extends React.Component{
             <div>
                 <Form action="" method="post" className="form-horizontal">
                     <FormGroup row>
-                        <Col md="4">
-                            <Input type="text"></Input> 
+                        <Col>
+                            {/* <Label htmlFor="prependedInput">Search</Label> */}
+                            <ABSearch/>
                         </Col>
                         <Label htmlFor="prependedInput">6 cases</Label>
                         <Col col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">
