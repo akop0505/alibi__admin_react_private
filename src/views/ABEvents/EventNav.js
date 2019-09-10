@@ -27,6 +27,7 @@ import {
 import EventMediaInput from './EventMediaInput';
 import EventDataInput from './EventDataInput';
 import './EventsStyle.css';
+import {ABSelectInput} from "../../components/AllInputs/ABSelectInput";
 
 
 
@@ -37,7 +38,8 @@ class EventNav extends React.Component{
                 <Form action="" method="post" className="form-horizontal">
                     <FormGroup row>
                         <Col md="4">
-                            <Input type="text"></Input> 
+                            <Input type="text"></Input>
+                            
                         </Col>
                         <Label htmlFor="prependedInput">6 cases</Label>
                         <Col col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">
@@ -47,14 +49,12 @@ class EventNav extends React.Component{
                 <FormGroup row>
                     <Col>
                         <Label htmlFor="prependedInput">Sort by</Label>
-                        <Input type="select" name="selectSm" id="SelectLm" bsSize="sm">
-                            <option value="0">username</option>
-                        </Input>
+                        <ABSelectInput name={"no"}/>
                     </Col>
                     <EventMediaInput/>
                     <Col>
                         <Label htmlFor="prependedInput">Header</Label>
-                        <Input type="select" name="selectSm" id="SelectLm" bsSize="sm">
+                        <Input type="select" name="selectSm" id="SelectLm" bsSize="sm" defaultValue="">
                             <option value="0">alibi</option>
                         </Input>
                     </Col>

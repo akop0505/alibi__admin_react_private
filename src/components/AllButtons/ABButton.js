@@ -19,7 +19,7 @@ export const ABButton = (props) => {
   </Button>)
 };
 
-ABButton.defaultProps = {
+ABButton.defaultProps = {   
   className:"",
   btnStyle: {},
   icon: "bars",
@@ -27,5 +27,5 @@ ABButton.defaultProps = {
   color: "black",
   onClick: () => {
     console.log('back button');
-  }
+  }     
 };

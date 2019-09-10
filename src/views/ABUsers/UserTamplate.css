@@ -3,10 +3,22 @@ th{
     line-height: 20px;
     color:  #333333;
 }
-.blockButton{
-    font-size: 15px;
-    line-height: 18px;
+#checkBox{
+    width:22px;
+    height:22px;
+    background: #FFFFFF;
+    border: 1px solid #292929;
+    box-sizing:border-box 
+}
+.resetButton{
     width: 118px;
     height: 28px;
-    color: #FFFFFF; 
+    background-color: #EB5757;
+    border-radius: 5px;
+    border: #EB5757;
+    color: white;
 }
+.col-padding-5 {
+    padding-left: 5px !important;
+    padding-right:5px !important;
+    }

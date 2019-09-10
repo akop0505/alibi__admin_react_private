@@ -3,6 +3,7 @@ import {Table, Input, Label, FormGroup, Button} from 'reactstrap';
 import {api} from './../../services/API';
 import '../AdminPanel.css';
 import {Link} from 'react-router-dom'
+import TagsTamplate from './TagsTamplate';
 
 
 class Users extends Component {
@@ -13,18 +14,19 @@ class Users extends Component {
     }
   };
 
-  componentDidMount() {
-    api.get('/tags').then(res => {
-      const tags = res.data;
-      this.setState({tags});
-      console.log(tags)
-    });
-  };
+  // componentDidMount() {
+  //   api.get('/tags').then(res => {
+  //     const tags = res.data;
+  //     this.setState({tags});
+  //     console.log(tags)
+  //   });
+  // };
 
   render() {
     return (
       <div className={'text-center'}>
-        <Table responsive>
+        <TagsTamplate/>
+        {/* <Table responsive>
           <thead>
             <tr>
               <th>
@@ -80,7 +82,7 @@ class Users extends Component {
 
 
           </tbody>
-        </Table>
+        </Table> */}
       </div>
     );
   }

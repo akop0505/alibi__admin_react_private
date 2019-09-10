@@ -20,6 +20,12 @@ class DefaultHeader extends Component {
 
     // eslint-disable-next-line
     const { children, ...attributes } = this.props;
+    const navLinkStyle={
+      color: "#0e0000",
+      fontSize: "19px",
+      lineHeight: "22px",
+      textDecoration: "none",
+    }
 
     return (
       <React.Fragment>
@@ -30,10 +36,10 @@ class DefaultHeader extends Component {
         <AppSidebarToggler className="d-md-down-none" display="lg" />
         <Nav className="d-md-down-none" navbar>
           <NavItem className="px-3">
-            <NavLink to="/dashboard" className="nav-link" activeStyle={{ color: '#FFBD0A'  }} style={{color: "#333333",}} >Events</NavLink>
+            <NavLink to="/dashboard" className="nav-link" activeStyle={{ color: '#FFBD0A'  }} style={navLinkStyle} >Events</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="/users" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={{color: "#333333",}}>Cases</NavLink>
+            <NavLink to="/users" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={navLinkStyle}>Cases</NavLink>
           </NavItem>
           <NavItem className="px-3">
             <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={{color: "#333333",}} >Users</NavLink>
@@ -56,7 +62,7 @@ class DefaultHeader extends Component {
         </Nav>
         <Nav className="ml-auto" navbar>
           <Col col="6" sm="4" md="2" xl className="mb-3 mb-xl-0">
-                <Button block color="ghost" style={{color:"#EB5757",fontSize: "19px",lineHeight:"22px"}}>Exit</Button>
+                <Button onClick={e => this.props.onLogout(e)} block color="ghost" style={{color:"#EB5757",fontSize: "19px",lineHeight:"22px"} }>Exit</Button>
               </Col>
           
         </Nav>
@@ -66,6 +72,7 @@ class DefaultHeader extends Component {
     );
   }
 }
+
 
 DefaultHeader.propTypes = propTypes;
 DefaultHeader.defaultProps = defaultProps;
