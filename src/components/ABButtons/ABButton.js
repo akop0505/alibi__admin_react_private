@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button} from 'reactstrap';
-import './AllButtons.css'
+import './ABButton.css'
 
 export const ABButton = (props) => {
   const {color} = props;
@@ -16,6 +16,7 @@ export const ABButton = (props) => {
     {props.icon === 'clock' && <i className={`fa fa-clock-o`}/> }
     {props.icon === 'check' && <i className={`fa fa-check`}/> }
     {props.icon === 'audion' && <i className={`fa fa-microphone`}/> }
+    {props.icon === 'plus' && <i className={`fa fa-plus`}/> }
   </Button>)
 };
 

@@ -25,21 +25,3 @@
     border-color: #FFBD0A;
     color: #20a8d8;
 }
-
-button_old {
-    width: 96px;
-    height: 28px;
-    background-color: #333333;
-    border-radius: 5px;
-    color: white;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;  
-}
-
-.svg1Down{
-    margin-left: 125.5px;
-    
-}

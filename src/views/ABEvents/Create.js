@@ -11,13 +11,13 @@ import {
   Row,
   Button, 
   NavItem, 
-  NavLink, 
   Nav,
-  Badge } from "reactstrap";
+  FormText
+} from "reactstrap";
 import Event from "../../Models/Event";
-import {ABButton} from "../../components/AllButtons/ABButton";
+import {ABButton} from "../../components/ABButtons/ABButton";
 import styled from 'styled-components';
-import './style.css';
+import {ABRectangle} from './../../components/ABRectangle/ABRectangle';
 
 const Hr = styled.hr`
   margin: 0.5em 0;
@@ -185,12 +185,40 @@ class Create extends React.Component {
               </Col>
             </Row>
             <Row>
-              <Col xs={'12'}> 
-                <div className={"event-tags d-inline-flex justify-content-center align-items-center"}>
-                  <span>Tag name</span>
-                  <i className={'fa fa-circle 1x'}/>
+              <Col xs={'12'}>
+                <div>
+                  <strong>
+                    Tags
+                  </strong>
                 </div>
+                <div>Systemic:</div>
+                <ABRectangle name={"tag name1"}/>
+                <ABRectangle name={"tag name2"}/>
+                <ABRectangle name={"tag name3"}/>
+                <ABRectangle name={"tag name4"}/>
+                <ABRectangle name={"tag name5"}/>
+                <ABRectangle name={"tag name6"}/>
+                <ABButton name={"Add tag"} icon={'plus'}/>
               </Col>
+              <Col xs={'12'}>
+                <div>Systemic:</div>
+                <ABRectangle name={"Work"}/>
+                <ABRectangle name={"Life"}/>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={'12'}>
+                <FormGroup>
+                  <Label for="exampleFile">
+                  <strong>
+                    Documents
+                  </strong></Label>
+                  <Input type="file" name="file" id="exampleFile" />
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={'12'}></Col>
             </Row>
           </Col>
         </Row>
