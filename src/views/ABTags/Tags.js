@@ -4,6 +4,7 @@ import {api} from './../../services/API';
 import '../AdminPanel.css';
 import {Link} from 'react-router-dom'
 import TagsTamplate from './TagsTamplate';
+import TagsNav from './TagsNav';
 
 
 class Users extends Component {
@@ -24,7 +25,8 @@ class Users extends Component {
 
   render() {
     return (
-      <div className={'text-center'}>
+      <div>
+        <TagsNav/>
         <TagsTamplate/>
         {/* <Table responsive>
           <thead>

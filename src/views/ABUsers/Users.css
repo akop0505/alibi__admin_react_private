@@ -6,9 +6,7 @@ th{
 #checkBox{
     width:22px;
     height:22px;
-    background: #FFFFFF;
-    border: 1px solid #292929;
-    box-sizing:border-box 
+    
 }
 .resetButton{
     width: 118px;
@@ -17,6 +15,7 @@ th{
     border-radius: 5px;
     border: #EB5757;
     color: white;
+    margin-top: 27.5px;
 }
 .col-padding-5 {
     padding-left: 5px !important;

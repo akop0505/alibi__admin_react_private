@@ -1,0 +1,23 @@
+Col{
+    text-align: start !important;
+}
+.resetButton{
+    width: 118px;
+    height: 28px;
+    background-color: #EB5757;
+    border-radius: 5px;
+    border: #EB5757;
+    color: white;
+    margin-top: 27.5px;
+    float: left;
+}
+th{
+    font-size: 17px;
+    line-height: 20px;
+    color:  #333333;
+}
+#checkBox{
+    width:22px;
+    height:22px;
+    
+}

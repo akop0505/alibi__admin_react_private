@@ -16,6 +16,7 @@ class Events extends Component {
             this.renderTable = this.renderTable.bind(this);
             this.togglePreviw = this.togglePreviw.bind(this);
             this.state={
+                testCount:0,
                 events :[],
                 showHeaderPreview: false,
                 headerPreviewData: null
@@ -27,6 +28,10 @@ componentDidMount(){
 
         this.setState({events});
         })
+        
+        setInterval(()=>{
+            this.addCount();
+        },2000);
     }
 togglePreviw(data = null) {
         const { showHeaderPreview } = this.state;
@@ -160,11 +165,13 @@ getParsent(data){
             </div>
         );
     }
-
+addCount(){
+    this.setState({testCount: ++this.state.testCount});
+}
     render() {
         return (
             <div className="animated fadeIn">
-                <EventNav/>
+                <EventNav count={this.state.testCount}/>
                 <EventV1/>
                 <Row>
                     { !this.state.showHeaderPreview ? this.renderTable() : this.renderHeaderPreview() }
