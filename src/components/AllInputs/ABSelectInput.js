@@ -21,13 +21,25 @@ export const ABSelectInput = (props) => {
 //     {props.icon === 'audion' && <i className={`fa fa-microphone`}/> }
 //   </Button>
 			<Input type="select" name="selectSm" id="SelectLm" bsSize="sm" defaultValue="" className="selectInput">
-				<option value="0">{props.name}</option>
+				<option value={null}>{props.placeholder}</option>
+				{
+					props.optionData.map((value)=>{
+						console.log(value);
+						return (
+							<option value={value[props.optionKey]} key={'option_'+Math.random()}>{value[props.optionValue]}</option>
+						);
+					})					
+				}
 			</Input>		
 	)
 };
+
 ABSelectInput.defaultProps = {
-		name: "username",
-		defaultValue:""
+	optionKey: "key",
+	optionValue: "value",
+	placeholder: "Select option",	
+	optionData: [],
+	defaultValue:""
 //     onClick: () => {
 //     console.log('back button');
 //   }
