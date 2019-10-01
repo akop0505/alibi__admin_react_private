@@ -5,7 +5,7 @@ import {api} from './../../services/API';
 import { Link } from 'react-router-dom';
 import '../AdminPanel.css';
 import EventV1 from './EventV1'
-import EventNav from './EventNav';
+import EventsNav from './EventsNav';
 import './EventsStyle.css';
 
 
@@ -171,7 +171,7 @@ addCount(){
     render() {
         return (
             <div className="animated fadeIn">
-                <EventNav count={this.state.testCount}/>
+                <EventsNav/>
                 <EventV1/>
                 <Row>
                     { !this.state.showHeaderPreview ? this.renderTable() : this.renderHeaderPreview() }

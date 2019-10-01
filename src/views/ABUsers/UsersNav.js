@@ -1,9 +1,9 @@
 import React from 'react';
 import {
     Row,
-    Col,
+    Col as bCol,
     Form,
-    FormGroup,
+    FormGroup as bFormGroup,
     Button as bButton
   } from 'reactstrap';
 import styled from 'styled-components';
@@ -13,6 +13,7 @@ import {ABDataInput} from "../../components/AllInputs/ABDataInput";
 import {ABInputLabel} from "../../components/AllInputs/ABInputLabel";
 import {ABSearch} from "../../components/ABSearch/ABSearch";
 import {ABQuality} from "../../components/ABQuality/ABQuality";
+import {ABSortInput} from "../../components/AllInputs/ABSortInput";
 import "./Users.css";
 
 const Button = styled(bButton)`
@@ -21,6 +22,14 @@ margin-top: 29px;
 padding-top: 2px;
 padding-bottom: 2px;
 `;
+const Col = styled(bCol)`
+padding-left:8px !important;
+padding-right:8px !important;
+`;
+const FormGroup = styled(bFormGroup)`
+margin-left:10px !important;
+margin-right:8px !important;
+`
 
 class UserNav extends React.Component{
     constructor(props){
@@ -29,9 +38,6 @@ class UserNav extends React.Component{
             optionData1: [{key:1,value:"Yes"},{key:2,value:"No"}],
             optionData2: [{index:1,name:"year"},{index:2,name:"month"},{index:3,name:"day"}]
         } 
-    }
-    componentDidMount(){
-        console.log(this.state);
     }
 
     render(){
@@ -48,14 +54,14 @@ class UserNav extends React.Component{
                     <Form action="" method="post" >           
                         <FormGroup>
                             <Row>
-                            <Col className="col-padding-5" md={'auto'} sm={'3'}>
+                            <Col  >
                                 <ABInputLabel/>
-                                <ABSelectInput 
+                                <ABSortInput 
                                     placeholder = {"Select 1"}
                                     optionData = {this.state.optionData1}
                                 />
                             </Col>
-                            <Col className="col-padding-5" md={'auto'} sm={'3'}>
+                            <Col >
                                 <ABInputLabel name={"Registration"}/> 
                                 <ABSelectInput
                                     optionKey={'index'} 
@@ -64,27 +70,22 @@ class UserNav extends React.Component{
                                     optionData = {this.state.optionData2}
                                 />
                             </Col>
-                            <Col className="col-padding-5" md={'auto'} sm={'3'}>
-                                <ABInputLabel name={"Registered from"}/> 
-                                <ABDataInput/>
+                            <Col md={'3'} sm={'3'}>
+                                <ABDataInput name1={"Registered from"} name2={"to"}/>
                             </Col>
-                            <Col className="col-padding-5" md={'auto'} sm={'3'}>
-                                <ABInputLabel name={"Registered to"}/> 
-                                <ABInput/>
-                            </Col>
-                            <Col className="col-padding-5">
+                            <Col >
                                 <ABInputLabel name={"Cases from"}/> 
                                 <ABInput/>
                             </Col>
-                            <Col className="col-padding-5">
+                            <Col >
                                 <ABInputLabel name={"Cases to"}/> 
                                 <ABInput/>
                             </Col>
-                            <Col className="col-padding-5">
+                            <Col>
                                 <ABInputLabel name={"Location"}/> 
                                 <ABInput/>
                             </Col>
-                            <Col className="col-padding-5">
+                            <Col>
                                 <ABInputLabel name={"Position"}/> 
                                 <ABInput/>
                             </Col>

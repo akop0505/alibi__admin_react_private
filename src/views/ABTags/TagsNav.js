@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import {FormGroup as bFormGroup, Col as bCol, Button as bButton} from 'reactstrap';
+import {FormGroup as bFormGroup, Col, Button as bButton, Label} from 'reactstrap';
 import {ABSearch} from "../../components/ABSearch/ABSearch";
 import {ABInputLabel} from "../../components/AllInputs/ABInputLabel";
 import {ABSelectInput} from "../../components/AllInputs/ABSelectInput";
 import {ABInput} from "../../components/AllInputs/ABInput";
 import {ABQuality} from "../../components/ABQuality/ABQuality";
+import {ABSortInput} from "../../components/AllInputs/ABSortInput";
 import "./Tags.css";
 
 const Button = styled(bButton)`
@@ -17,11 +18,10 @@ const Button = styled(bButton)`
 const Icon = styled.i`
     margin-top: 29px;
     margin-left: 0px;
-    padding: 5px;
-    border: 1px solid black;
-`;
-const Col = styled(bCol)`
-    padding: 2px;
+    padding: 6.5px;
+    color:#333333;
+    border: 0.5px solid #C8CED3;
+    border-radius: 5px;
 `;
 const FormGroup = styled(bFormGroup)`
     margin-left: 0px;
@@ -40,11 +40,8 @@ class TagsNav extends Component{
                 </FormGroup>
                 <FormGroup row>
                     <Col>
-                        <ABInputLabel/>
-                        <ABSelectInput name={"id"}/>
-                    </Col>
-                    <Col md={'1'} sm={'1'}>
-                        <Icon className="fa fa-sort-amount-desc"></Icon>
+                        <Label htmlFor="prependedInput">Sort By</Label>
+                        <ABSortInput />
                     </Col>
                     <Col>
                         <ABInputLabel name={"Cases"}/>

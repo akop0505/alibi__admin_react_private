@@ -1,9 +1,19 @@
 import React from 'react';
-import './ABQuality.css';
+import { Col as bCol} from 'reactstrap';
+import styled from 'styled-components';
+
+
+const Col = styled(bCol)`
+    padding-left:0px !important;
+    padding-right:0px !important;
+    font-size: 19px;
+    line-height: 22px;
+    color:#909090;
+`;
 
 export const ABQuality = (props) => {
     return (
-    <div >
-        <span className="qyality">{props.name}</span>
-    </div>)
+    <Col>
+        {props.name}
+    </Col>)
 }
