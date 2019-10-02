@@ -14,7 +14,7 @@ import {ABInputLabel} from "../../components/AllInputs/ABInputLabel";
 import {ABSearch} from "../../components/ABSearch/ABSearch";
 import {ABQuality} from "../../components/ABQuality/ABQuality";
 import {ABSortInput} from "../../components/AllInputs/ABSortInput";
-import "./Users.css";
+import { ABCasesFromToInput } from '../../components/AllInputs/ABCasesFromToInput';
 
 const Button = styled(bButton)`
 width: 100%;
@@ -27,9 +27,12 @@ padding-left:8px !important;
 padding-right:8px !important;
 `;
 const FormGroup = styled(bFormGroup)`
-margin-left:10px !important;
-margin-right:8px !important;
-`
+margin-left:-8px !important;
+margin-right:-8px !important;
+`;
+const ColQuality = styled(Col)`
+padding: 5px !important;
+`;
 
 class UserNav extends React.Component{
     constructor(props){
@@ -48,20 +51,21 @@ class UserNav extends React.Component{
                     <Col sm={"4"}>
                         <ABSearch/>
                     </Col>
-                    <ABQuality name={"5 users"}/>
+                    <ColQuality xs={"1"}>
+                        <ABQuality name={"5 users"}/>
+                    </ColQuality>
                 </FormGroup>
-                <div className={'text-start'} style={{marginLeft:"10px"}}>
+                
                     <Form action="" method="post" >           
-                        <FormGroup>
-                            <Row>
-                            <Col  >
-                                <ABInputLabel/>
+                        <FormGroup row>
+                            
+                            <Col >
                                 <ABSortInput 
                                     placeholder = {"Select 1"}
                                     optionData = {this.state.optionData1}
                                 />
                             </Col>
-                            <Col >
+                            <Col>
                                 <ABInputLabel name={"Registration"}/> 
                                 <ABSelectInput
                                     optionKey={'index'} 
@@ -73,13 +77,8 @@ class UserNav extends React.Component{
                             <Col md={'3'} sm={'3'}>
                                 <ABDataInput name1={"Registered from"} name2={"to"}/>
                             </Col>
-                            <Col >
-                                <ABInputLabel name={"Cases from"}/> 
-                                <ABInput/>
-                            </Col>
-                            <Col >
-                                <ABInputLabel name={"Cases to"}/> 
-                                <ABInput/>
+                            <Col md={'3'} sm={'3'}>
+                                <ABCasesFromToInput  name1={"Cases"} name2={"to"}/>
                             </Col>
                             <Col>
                                 <ABInputLabel name={"Location"}/> 
@@ -92,11 +91,10 @@ class UserNav extends React.Component{
                             <Col>
                                 <Button color={'danger'}><span>Reset</span></Button>
                             </Col>
-                            </Row>
+                            
                         </FormGroup>
                     </Form>
                 </div>
-            </div>
         )
     }
 }

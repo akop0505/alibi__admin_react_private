@@ -33,7 +33,6 @@ padding-right:8px !important;
             <div>
                 <Row>
                     <Col>
-                        <Label htmlFor="prependedInput">Sort By</Label>
                         <ABSortInput/>
                     </Col>
                     

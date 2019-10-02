@@ -2,7 +2,7 @@ import React from 'react';
 import {Button,
         Label,
         Input,
-        Row,
+        Row as bRow,
         Col as bCol,
     } from 'reactstrap';
 import styled from 'styled-components';
@@ -16,14 +16,23 @@ const Icon = styled.i`
     border-radius: 3px;
 `;
 const Col = styled(bCol)`
-padding-left:2px !important;
-padding-right:2px !important;
-`
+padding-left:1px !important;
+padding-right:1px !important;
+`;
+
+const Row = styled(bRow)`
+margin-left:0px !important;
+margin-right:0px 1important;
+`;
 
 export const ABSortInput = (props) => {
     return (
-        <Row>
+        <div>
+            
+            <Label htmlFor="prependedInput">Sort By</Label>  
+            <Row>
             <Col xs={"8"}>
+            
                 <Input type="select" name="selectSm" id="SelectLm" bsSize="sm" defaultValue="" className="selectInput">
 				    <option value={null}>{props.placeholder}</option>
 				        {
@@ -40,6 +49,8 @@ export const ABSortInput = (props) => {
                 <Icon className="fa fa-sort-amount-desc"></Icon>
             </Col>
         </Row>
+        </div>
+        
         		
 	)
 };

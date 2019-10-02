@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
-import {Table, Input,Button} from 'reactstrap';
+import {Table, Input,Button as bButton} from 'reactstrap';
 import {api} from './../../services/API';
+import styled from 'styled-components';
 import './Users.css';
+
+const Button = styled(bButton)`
+width: 50%;
+padding-top: 2px;
+padding-bottom: 2px;
+`;
+
 
 class UserTamplate extends Component {
 	constructor(props) {

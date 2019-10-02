@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import {FormGroup as bFormGroup, Col, Button as bButton, Label} from 'reactstrap';
+import {FormGroup as bFormGroup, Col as bCol, Button as bButton, Label} from 'reactstrap';
 import {ABSearch} from "../../components/ABSearch/ABSearch";
 import {ABInputLabel} from "../../components/AllInputs/ABInputLabel";
 import {ABSelectInput} from "../../components/AllInputs/ABSelectInput";
 import {ABInput} from "../../components/AllInputs/ABInput";
 import {ABQuality} from "../../components/ABQuality/ABQuality";
 import {ABSortInput} from "../../components/AllInputs/ABSortInput";
+import {ABCasesFromToInput} from "../../components/AllInputs/ABCasesFromToInput";
 import "./Tags.css";
 
 const Button = styled(bButton)`
-    width: 100%;
+    width: 25%;
     margin-top: 29px;
     padding-top: 2px;
     padding-bottom: 2px;
+    float:right;
+
 `;
 const Icon = styled.i`
     margin-top: 29px;
@@ -23,9 +26,16 @@ const Icon = styled.i`
     border: 0.5px solid #C8CED3;
     border-radius: 5px;
 `;
+const Col = styled(bCol)`
+padding-left:8px !important;
+padding-right:8px !important;
+`;
 const FormGroup = styled(bFormGroup)`
-    margin-left: 0px;
-    margin-right: 0px;
+margin-left:-8px !important;
+margin-right:-8px !important;
+`;
+const ColQuality = styled(Col)`
+padding: 5px !important;
 `;
 
 class TagsNav extends Component{
@@ -33,25 +43,21 @@ class TagsNav extends Component{
         return(
             <div>
                 <FormGroup row>
-                    <Col sm={"4"}>
+                    <Col md={"4"}>
                         <ABSearch/>
                     </Col>
-                    <ABQuality name={"5 tags"}/>
+                    <ColQuality xs={"1"}>
+                        <ABQuality name={"5 tags"}/>
+                    </ColQuality>  
                 </FormGroup>
                 <FormGroup row>
-                    <Col>
-                        <Label htmlFor="prependedInput">Sort By</Label>
+                    <Col sm={"auto"}>
                         <ABSortInput />
                     </Col>
-                    <Col>
-                        <ABInputLabel name={"Cases"}/>
-                        <ABInput/>
+                    <Col sm={"3"}>
+                        <ABCasesFromToInput name1={"Cases from"} name2={"to"}/>
                     </Col>
-                    <Col  className={"colTo"}>
-                        <ABInputLabel name={"to"}/>
-                        <ABInput/>
-                    </Col>
-                    <Col>
+                    <Col sm={"auto"}>
                         <ABInputLabel name={"Type"}/>
                         <ABSelectInput name={"systems"}/>
                     </Col>

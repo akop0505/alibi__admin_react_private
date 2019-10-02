@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
-import {Table, Input, Label, FormGroup, Button,Progress} from 'reactstrap';
+import {Table, Input, Label, FormGroup, Button as bButton,Progress} from 'reactstrap';
+import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 import {api} from './../../services/API';
 
-
+const Button = styled(bButton)`
+width: 25%;
+padding-top: 2px;
+padding-bottom: 2px;
+`;
 
 
 class TagsTamplate extends Component {

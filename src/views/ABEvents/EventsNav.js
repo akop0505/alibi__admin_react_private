@@ -23,7 +23,7 @@ padding-top: 2px;
 padding-bottom: 2px;
 `;
 const FormGroup = styled(bFormGroup)`
-margin-left:20px !important;
+margin-left:8px !important;
 margin-right:8px !important;
 `;
 const ColQuality = styled(Col)`

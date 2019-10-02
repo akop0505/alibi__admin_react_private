@@ -24,7 +24,7 @@ class EventCollaps extends React.Component{
                 <Collapse isOpen={this.state.collapse}>
                     <EvenntsContacts/>
                 </Collapse>
-                <Col md={{ span: 6, offset: 4 }}  onClick={this.toggle} className={'mb-1'} id="toggleCollapse1">
+                <Col md={{ span: "6", offset: "4"}} xs={{span: "6", offset: "4"}} onClick={this.toggle} className={'mb-1'} id="toggleCollapse1">
                     <img src={ !this.state.collapse ? this.state.ArrowDown : this.state.ArrowUp} />
                 </Col>
             </div>
