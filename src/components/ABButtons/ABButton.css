@@ -25,3 +25,14 @@
     border-color: #FFBD0A;
     color: #20a8d8;
 }
+.btn-red {
+    margin: 5px;
+    background-color: #EB5757; 
+    border-color: #EB5757;
+}
+.btn-gray {
+    margin: 5px;
+    background-color: #DEDEDE;
+    border-color: #DEDEDE;
+    color:black;
+}

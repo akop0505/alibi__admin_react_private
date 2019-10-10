@@ -40,6 +40,7 @@ const PrivateRoute = ({ component: Component, ...rest}) => (
         />
       )}
   />
+  
 );
 
 class DefaultLayout extends Component {

@@ -17,6 +17,8 @@ export const ABButton = (props) => {
     {props.icon === 'check' && <i className={`fa fa-check`}/> }
     {props.icon === 'audion' && <i className={`fa fa-microphone`}/> }
     {props.icon === 'plus' && <i className={`fa fa-plus`}/> }
+    {props.icon === 'edit' && <i className={`fa fa-edit`}/> }
+    {props.icon === 'book' && <i className={'icon-book-open icons'}/> }
   </Button>)
 };
 
