@@ -48,24 +48,23 @@ class UserNav extends React.Component{
         return(
             <div>
                 <FormGroup row>
-                    <Col sm={"4"}>
+                    <Col lg='3' md='5' sm='8' xs='9'>
                         <ABSearch/>
                     </Col>
-                    <ColQuality xs={"1"}>
+                    <ColQuality lg='2' md='3' sm='4' xs='3'>
                         <ABQuality name={"5 users"}/>
                     </ColQuality>
                 </FormGroup>
                 
                     <Form action="" method="post" >           
                         <FormGroup row>
-                            
-                            <Col >
+                            <Col lg='2' md='4' sm='4' xs='6'>
                                 <ABSortInput 
                                     placeholder = {"Select 1"}
                                     optionData = {this.state.optionData1}
                                 />
                             </Col>
-                            <Col>
+                            <Col lg='2' md='3' sm='3' xs='6'>
                                 <ABInputLabel name={"Registration"}/> 
                                 <ABSelectInput
                                     optionKey={'index'} 
@@ -74,21 +73,21 @@ class UserNav extends React.Component{
                                     optionData = {this.state.optionData2}
                                 />
                             </Col>
-                            <Col md={'3'} sm={'3'}>
+                            <Col lg='3' md='5' sm='5' xs='12'>
                                 <ABDataInput name1={"Registered from"} name2={"to"}/>
                             </Col>
-                            <Col md={'3'} sm={'3'}>
+                            <Col lg='2' md='4' sm='4' xs='12'>
                                 <ABCasesFromToInput  name1={"Cases"} name2={"to"}/>
                             </Col>
-                            <Col>
+                            <Col lg='1' md='3' sm='4' xs='6'>
                                 <ABInputLabel name={"Location"}/> 
                                 <ABInput/>
                             </Col>
-                            <Col>
+                            <Col lg='1' md='3' sm='4' xs='6'>
                                 <ABInputLabel name={"Position"}/> 
                                 <ABInput/>
                             </Col>
-                            <Col>
+                            <Col lg='1' md='2' sm='4' xs='6'>
                                 <Button color={'danger'}><span>Reset</span></Button>
                             </Col>
                             

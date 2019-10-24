@@ -9,41 +9,29 @@ import Image from 'react-bootstrap/Image';
 
 const Row = styled(bRow)`
 margin-left:0px !important;
-margin-right:0px !important;`
-
+margin-right:0px !important;
+`;
+const ABImage = styled(Image)`
+    width: 100%;
+`;
+const Div = styled.div`
+    margin-top: 15px;
+`;
 
 class CaseMedia extends Component{
     render(){
         return(
-            <div>
+            <Div className={'container-fluid'}>
             <Row>
-                <Col xs={'12'} sm={'6'} md={'6'} lg={'4'}>
-                    <Image src={caseimg} />
-                    <div>We make roads #1</div>
-                </Col>
-                <Col xs={'12'} sm={'6'} md={'6'} lg={'4'}>
-                    <Image src={caseimg2}/>
-                    <div>We make roads #2</div>
-                </Col>
-                <Col xs={'12'} sm={'6'} md={'6'} lg={'4'}>
-                    <Image src={caseimg2}/>
-                    <div>We make roads #3</div>
-                </Col>
-                <Col xs={'12'} sm={'6'} md={'6'} lg={'4'}>
-                    <Image src={caseimg}/>
-                    <div>We make roads #1</div>
-                </Col>
-                <Col xs={'12'} sm={'6'} md={'6'} lg={'4'}>
-                    <Image src={caseimg2}/>
-                    <div>We make roads #2</div>
-                </Col>
-                <Col xs={'12'} sm={'6'} md={'6'} lg={'4'}>
-                    <Image src={caseimg}/>
-                    <div>We make roads #3</div>
-                </Col>
+                {
+                    [caseimg,caseimg2,caseimg3,caseimg,caseimg2,caseimg3].map((item,index) => <Col xs={'12'} sm={'6'} md={'6'} lg={'4'} key={`abImage${index}`}>
+                            <ABImage src={item} />
+                        <div>{`We make roads #${index+1}`}</div>
+                    </Col>
+                )}
             </Row>
             <CaseFile/>
-            </div>
+            </Div>
         )
     }
 }

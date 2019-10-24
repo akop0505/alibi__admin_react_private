@@ -1,4 +1,4 @@
-
+/* 
 .cardBody{
     background-color: #FFFFFF;
 }
@@ -68,17 +68,12 @@ font-size: 14px;
 line-height: 18px;
 color: #909090;
 }
-.eventImg{
-    height: 80px;
-    width: 80px;
-}
 .upDownSvg{
     margin-left: 125px;
 }
 .form-horizontal{
   
 background: #FFFFFF;
-/* Frame */
 border: 0.5px solid #C8CED3;
 font-size: 17px;
 line-height: 20px;
@@ -101,4 +96,4 @@ line-height: 18px;
 }
 .eventsBody{
     margin-top: 20px;
-}
+} */

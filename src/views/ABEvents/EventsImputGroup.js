@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Button as bButton,
-    Col as bCol,
+    Col ,
     Form,
     FormGroup,
     Input,
@@ -15,49 +15,42 @@ import {ABInput} from "../../components/AllInputs/ABInput";
 import { ABDataInput } from '../../components/AllInputs/ABDataInput';
 import {ABSortInput} from "../../components/AllInputs/ABSortInput";
 
-const Icon = styled.i`
-    margin-top: 29px;
-    margin-left: 0px;
-    padding: 6.5px;
-    color:#333333;
-    border: 0.5px solid #C8CED3;
-    border-radius: 3px;
-`;
-const Col = styled(bCol)`
-padding-left:8px !important;
-padding-right:8px !important;
-`
+
+// const Col = styled(bCol)`
+// padding-left:8px !important;
+// padding-right:8px !important;
+// `;
   class EventsInputGroup extends React.Component{
     render(){
         return(
             <div>
                 <Row>
-                    <Col>
+                    <Col lg='2' md='3' sm='4' xs='12'>
                         <ABSortInput/>
                     </Col>
                     
-                    <Col>
+                    <Col lg='1' md='3' sm='4' xs='12'>
                         <ABMediaInput name={"Images"}/>
                     </Col>
-                    <Col>
+                    <Col lg='1' md='3' sm='4' xs='12'>
                         <ABMediaInput name={"Video"}/>
                     </Col>
-                    <Col>
+                    <Col lg='1' md='3' sm='4' xs='12'>
                         <ABMediaInput name={"Audio"}/>
                     </Col>
-                    <Col>
+                    <Col lg='1' md='3' sm='4' xs='12'>
                         <Label htmlFor="prependedInput">Header</Label>
                         <ABSelectInput/>
                     </Col>
-                    <Col xs={"3"}>
+                    <Col lg='3' md='3' sm='4' xs='12'>
                         
                         <ABDataInput name1={"Cases from"} name2={"to"}/>
                     </Col>
-                    <Col>
+                    <Col lg='2' md='3' sm='4' xs='12'>
                         <Label htmlFor="prependedInput">Label</Label>
                         <ABSelectInput/>
                     </Col>
-                    <Col>
+                    <Col lg='1' md='3' sm='4' xs='12'>
                         <Label htmlFor="prependedInput">Location</Label>
                         <ABInput/>
                     </Col>

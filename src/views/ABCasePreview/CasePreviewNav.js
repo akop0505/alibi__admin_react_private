@@ -4,8 +4,9 @@ import {ABButton} from "../../components/ABButtons/ABButton";
 import styled from 'styled-components';
 
 const Nav = styled(bNav)`
- margin: 0 35px 0 35px !important;
- padding: 9px 0 9px 0 !important;
+
+ padding: 9px 35px 9px 35px !important;
+ background-color:white;
 `;
 
 
@@ -13,7 +14,6 @@ const Nav = styled(bNav)`
 class CasePreviewNav extends Component{
     render(){
         return(
-            <div>
                 <Nav>
                     <NavItem>
                         <ABButton color={'black'} name={'Copy link'}  icon={'share'}/>
@@ -31,7 +31,6 @@ class CasePreviewNav extends Component{
                         <ABButton color={'red'} name={'Delete'}  icon={'close'}/>
                     </NavItem>
                 </Nav>
-            </div>
         )
     }
 }

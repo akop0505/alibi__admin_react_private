@@ -11,20 +11,11 @@ import {ABCasesFromToInput} from "../../components/AllInputs/ABCasesFromToInput"
 import "./Tags.css";
 
 const Button = styled(bButton)`
-    width: 25%;
+    width: 100%;
     margin-top: 29px;
     padding-top: 2px;
     padding-bottom: 2px;
-    float:right;
 
-`;
-const Icon = styled.i`
-    margin-top: 29px;
-    margin-left: 0px;
-    padding: 6.5px;
-    color:#333333;
-    border: 0.5px solid #C8CED3;
-    border-radius: 5px;
 `;
 const Col = styled(bCol)`
 padding-left:8px !important;
@@ -43,25 +34,25 @@ class TagsNav extends Component{
         return(
             <div>
                 <FormGroup row>
-                    <Col md={"4"}>
+                    <Col lg='3' md='5' sm='8' xs='9'>
                         <ABSearch/>
                     </Col>
-                    <ColQuality xs={"1"}>
+                    <ColQuality lg='2' md='3' sm='4' xs='3'>
                         <ABQuality name={"5 tags"}/>
                     </ColQuality>  
                 </FormGroup>
                 <FormGroup row>
-                    <Col sm={"auto"}>
+                    <Col lg='2' md='3' sm='4' xs='6'>
                         <ABSortInput />
                     </Col>
-                    <Col sm={"3"}>
+                    <Col lg='3' md='4' sm='8' xs='12'>
                         <ABCasesFromToInput name1={"Cases from"} name2={"to"}/>
                     </Col>
-                    <Col sm={"auto"}>
+                    <Col lg='2' md='3' sm='4' xs='6'>
                         <ABInputLabel name={"Type"}/>
                         <ABSelectInput name={"systems"}/>
                     </Col>
-                    <Col>
+                    <Col lg={{size:2, offset:3}} md='2' sm={{offset:4,size:4}} xs='6'>
                         <Button color={'danger'} ><span>Reset</span></Button>
                     </Col>
                 </FormGroup>

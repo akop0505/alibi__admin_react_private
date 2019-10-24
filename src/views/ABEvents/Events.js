@@ -170,12 +170,12 @@ addCount(){
 }
     render() {
         return (
-            <div className="animated fadeIn">
+            <div>
                 <EventsNav/>
                 <EventV1/>
-                <Row>
+                {/* <Row>
                     { !this.state.showHeaderPreview ? this.renderTable() : this.renderHeaderPreview() }
-                </Row>
+                </Row> */}
             </div>
         );
     }

@@ -1,8 +1,16 @@
 import React from 'react';
-import { Col, Collapse,} from 'reactstrap';
+import { Col, Collapse, Row} from 'reactstrap';
 import EvenntsContacts from './EventsContacts';
 import ArrowUp from './img/ArrowUp.svg';
 import ArrowDown from './img/ArrowDown.svg';
+import styled from 'styled-components';
+
+const ColRow = styled(Row)`
+background: #FFFFFF;
+border-top: 0.5px solid #DEDEDE;;
+border-bottom: 0.5px solid #DEDEDE;;
+`;
+
 
 class EventCollaps extends React.Component{
     constructor(props){
@@ -24,9 +32,11 @@ class EventCollaps extends React.Component{
                 <Collapse isOpen={this.state.collapse}>
                     <EvenntsContacts/>
                 </Collapse>
-                <Col md={{ span: "6", offset: "4"}} xs={{span: "6", offset: "4"}} onClick={this.toggle} className={'mb-1'} id="toggleCollapse1">
-                    <img src={ !this.state.collapse ? this.state.ArrowDown : this.state.ArrowUp} />
-                </Col>
+                <ColRow>
+                    <Col md={{ size: "6", offset: "3"}} xs={{size: "6", offset: "3"}} lg={{size: "6", offset: "3"}} sm={{size: "6", offset: "3"}} onClick={this.toggle} className={'mb-1'} id="toggleCollapse1">
+                        <img src={ !this.state.collapse ? this.state.ArrowDown : this.state.ArrowUp} width='100%' />
+                    </Col>
+                </ColRow>
             </div>
         )
     }

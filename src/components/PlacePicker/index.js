@@ -70,10 +70,9 @@ class PlacePicker extends Component {
         return (
             <div>
                 <FormControl style={{ width: '100%' }}>
-                    <Typography  >On map:</Typography >
                     <Map zoom={15}
                         minZoom={5}
-                        style={{ width: '250px', height: '250px' }}
+                        style={{ width: '100%', height: '250px' }}
                         center={this.state.point}
                         onClick={this.onPointSelected}
                         attributionControl={true}
@@ -90,7 +89,6 @@ class PlacePicker extends Component {
                         />
                         <Marker position={this.state.point} />
                     </Map>
-                    <TextField label="location" className="map-input" onChange={this.onInputChanged} value={this.state.point} onBlur={this.onBlur} />
                 </FormControl>
             </div>
         )
