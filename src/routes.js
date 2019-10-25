@@ -10,6 +10,8 @@ const UserEdit = React.lazy(() => import('./views/ABUsers/UserEdit'));
 const TagsCreate = React.lazy(() => import('./views/ABTags/TagsCreate'));
 const TagsEdit = React.lazy(() => import('./views/ABTags/TagsEdit'));
 const CaseEdit = React.lazy(() => import('./views/ABCases/CaseEdit'));
+const CaseCreate = React.lazy(() => import('./views/ABCasePreview/CaseCreator'));
+const CasePreview = React.lazy(() => import('./views/ABCasePreview/CasePreview'));
 
 
 /****************************************************************************/
@@ -63,7 +65,9 @@ const routes = [
   {path: '/tags/create', name: 'TagsCreate', component: TagsCreate},
   {path: '/tags/:id', name: 'TagsEdit', component: TagsEdit},
   { path: '/cases/:id', name: 'CaseEdit', component: CaseEdit },
-  
+  { path: '/preview/create', name: 'CaseCreate', component: CaseCreate },
+  { path: '/preview/show', name: 'CasePreview', component: CasePreview },
+
   /*****************************************************************/
   {path: '/dashboard', name: 'Dashboard', component: Dashboard},
   {path: '/theme', exact: true, name: 'Theme', component: Colors},

@@ -21,19 +21,37 @@ export default {
       name: 'Events',
       url: '/events',
       icon: 'icon-pencil',
-    },
-    {
+    },{
+      name: 'Event create',
+      url: '/events/create',
+      icon: 'icon-pencil',
+    }, {
       name: 'Cases',
       url: '/cases',
       icon: 'icon-pencil',
-    },
-    {
+    },{
+      name: 'Case create',
+      url: '/preview/create',
+      icon: 'icon-pencil',
+    },{
+      name: 'Case show',
+      url: '/preview/show',
+      icon: 'icon-pencil',
+    }, {
       name: 'Users',
       url: '/users',
       icon: 'icon-pencil',
     },{
       name: 'Tags',
       url: '/tags',
+      icon: 'icon-pencil',
+    },{
+      name: 'Tags create',
+      url: '/tags/create',
+      icon: 'icon-pencil',
+    },{
+      name: 'Tags edit',
+      url: '/tags/edit/2',
       icon: 'icon-pencil',
     },{
       name: 'Notifications',
