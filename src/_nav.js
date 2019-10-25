@@ -35,6 +35,26 @@ export default {
       name: 'Tags',
       url: '/tags',
       icon: 'icon-pencil',
+    },{
+      name: 'Notifications',
+      url: '/notifications',
+      icon: 'icon-pencil',
+    },{
+      name: 'Notifications alerts',
+      url: '/notifications/alerts',
+      icon: 'icon-pencil',
+    },{
+      name: 'Notifications badges',
+      url: '/notifications/badges',
+      icon: 'icon-pencil',
+    },{
+      name: 'Notifications modals',
+      url: '/notifications/modals',
+      icon: 'icon-pencil',
+    },{
+      name: 'Charts',
+      url: '/charts',
+      icon: 'icon-pencil',
     },
     /*{
       title: true,
