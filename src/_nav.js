@@ -36,6 +36,21 @@ export default {
       url: '/tags',
       icon: 'icon-pencil',
     },
+    {
+      name: 'Analytics',
+      url: '#',
+      icon: 'icon-pencil',
+    },
+    {
+      name: 'Notifications',
+      url: '/notifications',
+      icon: 'icon-pencil',
+    },
+    {
+      name: 'Chats',
+      url: '/chat',
+      icon: 'icon-pencil',
+    },
     /*{
       title: true,
       name: 'Components',

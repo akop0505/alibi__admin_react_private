@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
-import {Table, Input,Button as bButton} from 'reactstrap';
+import {Table, Input as bInput,Button as bButton, Row as bRow, Col} from 'reactstrap';
 import {api} from './../../services/API';
 import styled from 'styled-components';
-import './Users.css';
 
 const Button = styled(bButton)`
-width: 50%;
-padding-top: 2px;
-padding-bottom: 2px;
+width: 100%;
 `;
 
+const Row = styled(bRow)`
+margin:0 !important;`;
 
-class UserTamplate extends Component {
+const Input = styled(bInput)`
+width:22px;
+height:22px;`;
+
+class NotificationsTamplate extends Component {
 	constructor(props) {
     	super(props);
     	this.state = {
@@ -27,10 +30,10 @@ class UserTamplate extends Component {
                             <th className="text-center"></th>
                             <th className="text-left"><i className="icon-people icons font-2xl d-block mt-4"></i></th>
                             <th className="text-left">User</th>
-                            <th className="text-left">ID</th>
-                            <th className="text-left">Country</th>
-                            <th className="text-left">Cases</th>
-                            <th><Button color="danger">Block(2)</Button></th>
+                            <th className="text-left">Message</th>
+                            <th>
+                                
+                                <Col lg={{size:8, offset:3,}}><Button color="danger">Spam(2)</Button></Col></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,10 +43,10 @@ class UserTamplate extends Component {
                                     className="form-check-input" 
                                     type="checkbox" 
                                     id="checkBox" 
-                                    name="checkBox1" 
+                                    name="checkBox1"
                                 />
                             </td>
-                            <td className="text-left">
+                            <td className="text-center">
                                 <div className="avatar">
                                     <img src={'assets/img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
                                 </div>
@@ -54,13 +57,15 @@ class UserTamplate extends Component {
                                     Registered: Jan 1, 2019
                                 </div>
                             </td>
-                            <td className="text-left">abcfe</td>
                             <td className="text-left">
-                                <i className="flag-icon flag-icon-de h4 mb-0" title="de" id="de"></i>
-                            </td>
-                            <td className="text-left">29</td>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin ornare malesuada.
+                                </td>
+        
                             <td>
-                                <Button color="dark" >Message</Button>
+                                <Row>
+                                    <Col lg='6'><Button color="dark" >Chat</Button></Col>
+                                    <Col lg='6'><Button color="dark" >Spam</Button></Col>
+                                </Row>
                             </td>
                         </tr>
                         <tr>
@@ -69,10 +74,10 @@ class UserTamplate extends Component {
                                     className="form-check-input" 
                                     type="checkbox" 
                                     id="checkBox" 
-                                    name="checkBox1" 
+                                    name="checkBox1"
                                 />
                             </td>
-                            <td className="text-left">
+                            <td className="text-center">
                                 <div className="avatar">
                                     <img src={'assets/img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
                                 </div>
@@ -83,13 +88,15 @@ class UserTamplate extends Component {
                                     Registered: Jan 1, 2019
                                 </div>
                             </td>
-                            <td className="text-left">abcfe</td>
                             <td className="text-left">
-                                <i className="flag-icon flag-icon-de h4 mb-0" title="de" id="de"></i>
-                            </td>
-                            <td className="text-left">29</td>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin ornare malesuada.
+                                </td>
+        
                             <td>
-                                <Button color="dark" >Message</Button>
+                                <Row>
+                                    <Col lg='6'><Button color="dark" >Chat</Button></Col>
+                                    <Col lg='6'><Button color="dark" >Spam</Button></Col>
+                                </Row>
                             </td>
                         </tr>
                         <tr>
@@ -98,10 +105,10 @@ class UserTamplate extends Component {
                                     className="form-check-input" 
                                     type="checkbox" 
                                     id="checkBox" 
-                                    name="checkBox1" 
+                                    name="checkBox1"
                                 />
                             </td>
-                            <td className="text-left">
+                            <td className="text-center">
                                 <div className="avatar">
                                     <img src={'assets/img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
                                 </div>
@@ -112,13 +119,15 @@ class UserTamplate extends Component {
                                     Registered: Jan 1, 2019
                                 </div>
                             </td>
-                            <td className="text-left">abcfe</td>
                             <td className="text-left">
-                                <i className="flag-icon flag-icon-de h4 mb-0" title="de" id="de"></i>
-                            </td>
-                            <td className="text-left">29</td>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin ornare malesuada.
+                                </td>
+        
                             <td>
-                                <Button color="dark" >Message</Button>
+                                <Row>
+                                    <Col lg='6'><Button color="dark" >Chat</Button></Col>
+                                    <Col lg='6'><Button color="dark" >Spam</Button></Col>
+                                </Row>
                             </td>
                         </tr>
                     </tbody>
@@ -127,4 +136,4 @@ class UserTamplate extends Component {
         )
     }
 }
-export default UserTamplate
+export default NotificationsTamplate
