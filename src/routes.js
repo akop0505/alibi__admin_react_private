@@ -10,9 +10,8 @@ const UserEdit = React.lazy(() => import('./views/ABUsers/UserEdit'));
 const TagsCreate = React.lazy(() => import('./views/ABTags/TagsCreate'));
 const TagsEdit = React.lazy(() => import('./views/ABTags/TagsEdit'));
 const CaseEdit = React.lazy(() => import('./views/ABCases/CaseEdit'));
-const CaseCreate = React.lazy(() => import('./views/ABCasePreview/CaseCreator'));
-const CasePreview = React.lazy(() => import('./views/ABCasePreview/CasePreview'));
-
+const Notifications = React.lazy(() => import('./views/ABNotifications/Notifications'));
+const Chat = React.lazy(() => import('./views/ABChat/Chat'));
 
 /****************************************************************************/
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
@@ -64,10 +63,9 @@ const routes = [
   {path: '/users/:id', name: 'UserEdit', component: UserEdit},
   {path: '/tags/create', name: 'TagsCreate', component: TagsCreate},
   {path: '/tags/:id', name: 'TagsEdit', component: TagsEdit},
-  { path: '/cases/:id', name: 'CaseEdit', component: CaseEdit },
-  { path: '/preview/create', name: 'CaseCreate', component: CaseCreate },
-  { path: '/preview/show', name: 'CasePreview', component: CasePreview },
-
+  {path: '/cases/:id', name: 'CaseEdit', component: CaseEdit },
+  {path: '/notifications', name:'Notifications', component:Notifications},
+  {path: '/chat', name:'Chat', component:Chat},
   /*****************************************************************/
   {path: '/dashboard', name: 'Dashboard', component: Dashboard},
   {path: '/theme', exact: true, name: 'Theme', component: Colors},

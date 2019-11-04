@@ -12,9 +12,10 @@ import EventsText from './EventsText';
 import EventsHeader from './EventsHeader';
 import styled from 'styled-components';
 
+
 const Col = styled(bCol)`
 padding-left:5px !important;
-padding-right:5px !important;
+padding-right:5px !important;    
 padding-top:6px !important;
 padding-bottom:6px !important;
 margin-bottom:30px;`;
@@ -23,11 +24,22 @@ const Card = styled(bCard)`
 padding:0 15px 0 15px !important`;
 
 class EventV1 extends React.Component{
+    constructor(props) {
+        super(props)
+    
+        this.goCasePreview = this.goCasePreview.bind(this)
+      }
+    
+      goCasePreview() {
+          console.log(this.props);
+        this.props.history.push('casePreview')
+      }
+
     render(){
         return(
             <div>
                 <Row>
-                    <Col xs="12"  md='6' lg='4' sm='12'>
+                    <Col xs="12"  md='6' lg='4' sm='12' onClick={this.goCasePreview}>
                         <Card>
                             <EventsHeader/>
                             <EventCollaps/>

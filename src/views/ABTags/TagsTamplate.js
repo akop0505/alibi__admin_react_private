@@ -48,6 +48,38 @@ render() {
               				<Button color="dark" >Edit</Button>
             			</td>
           			</tr>
+					  <tr>
+            			<td style={{padding:"0 0 30px 20px"}}>
+							<Input
+								className="form-check-input" 
+								type="checkbox" 
+								id="checkBox" 
+								name="checkBox1" 
+              				/>
+            			</td>
+            			<td className="text-left">Berlin</td>
+            			<td className="text-left">29</td>
+            			<td className="text-left">2</td>
+            			<td>
+              				<Button color="dark" >Edit</Button>
+            			</td>
+          			</tr>
+					  <tr>
+            			<td style={{padding:"0 0 30px 20px"}}>
+							<Input
+								className="form-check-input" 
+								type="checkbox" 
+								id="checkBox" 
+								name="checkBox1" 
+              				/>
+            			</td>
+            			<td className="text-left">Berlin</td>
+            			<td className="text-left">29</td>
+            			<td className="text-left">2</td>
+            			<td>
+              				<Button color="dark" >Edit</Button>
+            			</td>
+          			</tr>
        			</tbody>
       		</Table>
     	</div>

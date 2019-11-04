@@ -1,4 +1,4 @@
-import React ,{Component} from 'react'
+import React ,{Component, Fragment} from 'react'
 import CasePreviewNav from './CasePreviewNav'
 import CasePreviewBody from './CasePreviewBody'
 import { CasePreviewFooter } from '../../components/ABCasePreview/CasePreviewFooter'
@@ -6,10 +6,10 @@ import { CasePreviewFooter } from '../../components/ABCasePreview/CasePreviewFoo
 class CasePreview extends Component{
     render(){
         return(
-            <div>
+            <Fragment>
                 <CasePreviewNav/>
                 <CasePreviewBody/>
-            </div>
+            </Fragment>
             )
     }
 }

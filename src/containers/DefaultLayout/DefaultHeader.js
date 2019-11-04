@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink as rNavlink } from 'react-router-dom';
 import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, Button,Col } from 'reactstrap';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import './NavBar.css';
 
 import { AppAsideToggler, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
@@ -15,17 +16,22 @@ const propTypes = {
 
 const defaultProps = {};
 
+const NavLink = styled(rNavlink)`
+font-size: 19px;
+line-height: 22px;
+color:#333333;`;
+
 class DefaultHeader extends Component {
   render() {
 
     // eslint-disable-next-line
-    const { children, ...attributes } = this.props;
-    const navLinkStyle={
-      color: "#0e0000",
-      fontSize: "19px",
-      lineHeight: "22px",
-      textDecoration: "none",
-    }
+    // `const { children, ...attributes } = this.props;
+    // const navLinkStyle={
+    //   color: "#0e0000",
+    //   fontSize: "19px",
+    //   lineHeight: "22px",
+    //   textDecoration: "none",
+    // }`
 
     return (
       <React.Fragment>
@@ -36,28 +42,25 @@ class DefaultHeader extends Component {
         <AppSidebarToggler className="d-md-down-none" display="lg" />
         <Nav className="d-md-down-none" navbar>
           <NavItem className="px-3">
-            <NavLink to="/dashboard" className="nav-link" activeStyle={{ color: '#FFBD0A'  }} style={navLinkStyle} >Events</NavLink>
+            <NavLink to="/events" className="nav-link" activeStyle={{ color: '#FFBD0A'  }}>Events</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="/users" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={navLinkStyle}>Cases</NavLink>
+            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Cases</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={{color: "#333333",}} >Users</NavLink>
+            <NavLink to="/users" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Users</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }}style={{color: "#333333",}} >Tags</NavLink>
+            <NavLink to="/tags" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Tags</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={{color: "#333333",}}>Tags</NavLink>
+            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Analytics</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={{color: "#333333",}}>Analytics</NavLink>
+            <NavLink to="/notifications" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Notifications</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }} style={{color: "#333333",}} >Notifications</NavLink>
-          </NavItem>
-          <NavItem className="px-3">
-            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A'}} style={{color: "#333333",}} >Chats</NavLink>
+            <NavLink to="/chat" className="nav-link" activeStyle={{ color: '#FFBD0A'}}>Chats</NavLink>
           </NavItem>
         </Nav>
         <Nav className="ml-auto" navbar>

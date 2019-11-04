@@ -29,15 +29,17 @@ export default {
       name: 'Cases',
       url: '/cases',
       icon: 'icon-pencil',
-    },{
-      name: 'Case create',
-      url: '/preview/create',
-      icon: 'icon-pencil',
-    },{
-      name: 'Case show',
-      url: '/preview/show',
-      icon: 'icon-pencil',
-    }, {
+     },
+    //{
+    //   name: 'Case create',
+    //   url: '/preview/create',
+    //   icon: 'icon-pencil',
+    // },{
+    //   name: 'Case show',
+    //   url: '/preview/show',
+    //   icon: 'icon-pencil',
+    //},
+      {
       name: 'Users',
       url: '/users',
       icon: 'icon-pencil',
@@ -53,25 +55,15 @@ export default {
       name: 'Tags edit',
       url: '/tags/edit/2',
       icon: 'icon-pencil',
-    },{
+    },
+    {
       name: 'Notifications',
       url: '/notifications',
       icon: 'icon-pencil',
-    },{
-      name: 'Notifications alerts',
-      url: '/notifications/alerts',
-      icon: 'icon-pencil',
-    },{
-      name: 'Notifications badges',
-      url: '/notifications/badges',
-      icon: 'icon-pencil',
-    },{
-      name: 'Notifications modals',
-      url: '/notifications/modals',
-      icon: 'icon-pencil',
-    },{
-      name: 'Charts',
-      url: '/charts',
+    },
+    {
+      name: 'Chats',
+      url: '/chat',
       icon: 'icon-pencil',
     },
     /*{

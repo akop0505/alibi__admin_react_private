@@ -172,7 +172,7 @@ addCount(){
         return (
             <div>
                 <EventsNav/>
-                <EventV1/>
+                <EventV1 {...this.props}/>
                 {/* <Row>
                     { !this.state.showHeaderPreview ? this.renderTable() : this.renderHeaderPreview() }
                 </Row> */}

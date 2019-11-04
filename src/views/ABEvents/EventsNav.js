@@ -21,6 +21,7 @@ width:100%
 padding-top: 2px;
 padding-bottom: 2px;
 
+
 `;
 const ButtonAddCase = styled(bButton)`
 width: 100%;
@@ -30,8 +31,7 @@ padding-bottom: 2px;
 const Col = styled(bCol)`
 padding-left:5px !important;
 padding-right:5px !important;
-padding-top:6px !important;
-padding-bottom:6px !important;
+
 `;
 
 class EventsNav extends React.Component{
