@@ -14,6 +14,7 @@ class Users extends Component {
       tags: [],
     }
   };
+  
 
   // componentDidMount() {
   //   api.get('/tags').then(res => {
@@ -27,7 +28,7 @@ class Users extends Component {
     return (
       <div>
         <TagsNav/>
-        <TagsTamplate/>
+        <TagsTamplate {...this.props}/>
         {/* <Table responsive>
           <thead>
             <tr>

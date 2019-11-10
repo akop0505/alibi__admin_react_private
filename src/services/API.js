@@ -9,17 +9,17 @@ const axiosApiConfig = {
 
 export const api = axios.create(axiosApiConfig);
 
-function errorResponseHandler(error) {
-  if (error.response.status === 401) {
-    localStorage.clear();
-    window.location.href = "/";
-  }
-  return Promise.reject(error);
-}
+// function errorResponseHandler(error) {
+//   if (error.response.status === 401) {
+//     localStorage.clear();
+//     window.location.href = "/";
+//   }
+//   return Promise.reject(error);
+// }
 
 api.interceptors.response.use(
   response => response,
-  errorResponseHandler
+  // errorResponseHandler
 );
 
 export const setAxiosHeader = () => {

@@ -2,13 +2,15 @@ import React from 'react';
 import {Input,
     Label,
     Button,
-    FormGroup,
+    InputGroupAddon,
     Col,
     Row,
     CardBody,
-    Card,
+    InputGroup,
     } from 'reactstrap';
 import { api } from '../../services/API';
+import { ABRectangle } from '../../components/ABRectangle/ABRectangle';
+import { ABButton } from '../../components/ABButtons/ABButton';
 
 class TagsEdit extends React.Component{
     constructor(props){
@@ -31,32 +33,40 @@ class TagsEdit extends React.Component{
         };
     render(){
         return(
-            <div>
-                <Col>
-            <Card>
-            <CardBody>
+            <Col>
+                <h4><strong>Tags</strong></h4>
+                <h4>Systemic:</h4>
                 <Row>
-                    <Col xs="12" sm="6">
-                        <FormGroup>
-                            <Label htmlFor="firstname">text</Label>
-                            <Input 
-                                type="text" 
-                                name="firstname"
-                                required
-                                onChange={this.handleTextChange} 
-                                />
-                        </FormGroup>
+                    <Col xs='4'>
+                        <InputGroup>
+                            <Input type="text" id="text-input" name="text-input"/>
+                            <InputGroupAddon addonType="append">
+                                <Button type="button" color="warning">save</Button>
+                            </InputGroupAddon>
+                        </InputGroup>
+                    </Col>
+                    <Col xs='4'>
+                
+                      
+                            <ABRectangle name={"Berlin"}/>
+                        
+                            <ABRectangle name={"22"}/>
+                       
+                            <ABRectangle name={"Document"}/>
+                        
+                
                     </Col>
                 </Row>
-                <Col sm xs="12">
-                    <Button color="primary" onClick={this.handleSubmit}>
-                        <i className="fa fa-save "></i>&nbsp;SAVE
-                    </Button>
-                </Col>
-            </CardBody>
-            </Card>
-        </Col>
-            </div>
+                    <h4>Custom:</h4>
+                <Row>
+                    <Col>
+                        <ABButton name={"Add tag"} icon={'plus'}/>
+                        <ABRectangle name={"Work"}/>
+                        <ABRectangle name={"Life"}/>
+                    </Col>
+                    
+                </Row>
+            </Col>
         )
     }
 }

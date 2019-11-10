@@ -17,7 +17,12 @@ class UserTamplate extends Component {
     	this.state = {
     	users: [],
     }
+    this.goChat = this.goChat.bind(this)
     };
+    goChat() {
+        console.log(this.props);
+        this.props.history.push('/chat')
+    }
     render() {
         return (
             <div className="text-center">
@@ -60,7 +65,7 @@ class UserTamplate extends Component {
                             </td>
                             <td className="text-left">29</td>
                             <td>
-                                <Button color="dark" >Message</Button>
+                                <Button color="dark" onClick={this.goChat}>Message</Button>
                             </td>
                         </tr>
                         <tr>
@@ -89,7 +94,7 @@ class UserTamplate extends Component {
                             </td>
                             <td className="text-left">29</td>
                             <td>
-                                <Button color="dark" >Message</Button>
+                                <Button color="dark" onClick={this.goChat}>Message</Button>
                             </td>
                         </tr>
                         <tr>
@@ -118,7 +123,7 @@ class UserTamplate extends Component {
                             </td>
                             <td className="text-left">29</td>
                             <td>
-                                <Button color="dark" >Message</Button>
+                                <Button color="dark" onClick={this.goChat}>Message</Button>
                             </td>
                         </tr>
                     </tbody>

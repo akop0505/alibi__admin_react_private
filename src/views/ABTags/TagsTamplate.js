@@ -16,8 +16,13 @@ class TagsTamplate extends Component {
     	super(props);
     	this.state = {
     	users: [],
-    }
+	}
+	this.goTagsEdit = this.goTagsEdit.bind(this)
 };
+goTagsEdit() {
+	console.log(this.props);
+  this.props.history.push('/tags/create')
+}
 render() {
  	return (
     	<div className={'text-center'}>
@@ -45,7 +50,7 @@ render() {
             			<td className="text-left">29</td>
             			<td className="text-left">2</td>
             			<td>
-              				<Button color="dark" >Edit</Button>
+              				<Button color="dark" onClick={this.goTagsEdit} >Edit</Button>
             			</td>
           			</tr>
 					  <tr>
@@ -61,7 +66,7 @@ render() {
             			<td className="text-left">29</td>
             			<td className="text-left">2</td>
             			<td>
-              				<Button color="dark" >Edit</Button>
+              				<Button color="dark" onClick={this.goTagsEdit} >Edit</Button>
             			</td>
           			</tr>
 					  <tr>
@@ -77,7 +82,7 @@ render() {
             			<td className="text-left">29</td>
             			<td className="text-left">2</td>
             			<td>
-              				<Button color="dark" >Edit</Button>
+              				<Button color="dark" onClick={this.goTagsEdit}>Edit</Button>
             			</td>
           			</tr>
        			</tbody>

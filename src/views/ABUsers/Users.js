@@ -14,6 +14,7 @@ class Users extends Component {
     	this.state = {
     	users: [],
     }
+
 };
 
   // componentDidMount() {
@@ -28,7 +29,7 @@ render() {
  	return (
     	<div>
           <UserNav/>
-          <UserTamplate/>
+          <UserTamplate {...this.props}/>
         {/* <Table responsive>
           <thead>
           <tr>
