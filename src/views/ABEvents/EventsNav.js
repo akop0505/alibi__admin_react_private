@@ -46,7 +46,7 @@ class EventsNav extends React.Component{
                         <ABQuality name={"5 cases"}/>
                     </Col>
                     <Col  lg='2' md='3' sm='4' xs='5'>
-                        <ButtonAddCase color={'dark'}><span>New Case</span> <i className="fa fa-plus"></i></ButtonAddCase>
+                        <ButtonAddCase color={'dark'} onClick={()=>{ this.props.history.push('/events/create')}}><span>New Case</span> <i className="fa fa-plus"></i></ButtonAddCase>
                     </Col>
                     <Col  lg={{offset:4,size:2}} md={{offset:0,size:2}} sm={{offset:4,size:4}} xs='4'>
                         <ButtonReset color={'danger'}><span>Reset</span></ButtonReset>
