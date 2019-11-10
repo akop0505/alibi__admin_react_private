@@ -23,11 +23,11 @@ class Events extends Component {
             }; 
         };
 componentDidMount(){
-    api.get('/events').then(res=>{
-        const events = res.data;
+    // api.get('/events').then(res=>{
+    //     const events = res.data;
 
-        this.setState({events});
-        })
+    //     this.setState({events});
+    //     })
         
         setInterval(()=>{
             this.addCount();

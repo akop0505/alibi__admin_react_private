@@ -45,7 +45,7 @@ class DefaultHeader extends Component {
             <NavLink to="/events" className="nav-link" activeStyle={{ color: '#FFBD0A'  }}>Events</NavLink>
           </NavItem>
           <NavItem className="px-3">
-            <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Cases</NavLink>
+            <NavLink to="/cases" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Cases</NavLink>
           </NavItem>
           <NavItem className="px-3">
             <NavLink to="/users" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Users</NavLink>
@@ -53,9 +53,9 @@ class DefaultHeader extends Component {
           <NavItem className="px-3">
             <NavLink to="/tags" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Tags</NavLink>
           </NavItem>
-          <NavItem className="px-3">
+          {/* <NavItem className="px-3">
             <NavLink to="#" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Analytics</NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem className="px-3">
             <NavLink to="/notifications" className="nav-link" activeStyle={{ color: '#FFBD0A' }}>Notifications</NavLink>
           </NavItem>

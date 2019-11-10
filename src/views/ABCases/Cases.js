@@ -16,9 +16,9 @@ class Cases extends Component {
   };
 
   componentWillMount() {
-    this.loadEvents(() => {
-      this.loadCases();
-    });
+    // this.loadEvents(() => {
+    //   this.loadCases();
+    // });
   }
 
   loadEvents(cb = null) {
